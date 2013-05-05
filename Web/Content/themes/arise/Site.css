@@ -1,0 +1,178 @@
+﻿
+@import "//arise.pfizer.com/Styles/Arise2.min.css";
+@import "base/Arise2.sp1.css";
+fieldset .label
+{
+  width: 270px;
+}
+
+fieldset label
+{
+  float: left;
+  width: 260px;
+  margin-right: 12px;
+  text-align: right;
+  color: #3873A9;
+}
+
+fieldset .valueLabel input[type="radio"]
+{
+  width: 20px;
+}
+
+fieldset .valueLabel input[type="checkbox"]
+{
+  width: 20px;
+}
+
+fieldset .valueLabel label
+{
+  width: 40px;
+  float: none;
+}
+
+.capability
+{
+  padding-left: 30px;
+}
+
+th, .command
+{
+  white-space: nowrap;
+}
+
+
+
+
+
+
+
+
+/* New styles by Troy */
+
+.textBox.tiny
+{
+  width: 60px;
+}
+
+.dropDownList.tiny
+{
+  width: 63px;
+}
+
+.textBox.short
+{
+  width: 180px;
+}
+
+.dropDownList.short
+{
+  width: 183px;
+}
+
+#sourceControlCoveragesItems div
+{
+  display: inline;
+}
+
+  #sourceControlCoveragesItems div span
+  {
+    margin-right: 20px;
+  }
+
+/* jQuery UI overrides */
+
+.ui-tabs .ui-tabs-nav
+{
+  padding: 0px;
+}
+
+.ui-tabs .ui-tabs-panel
+{
+  padding: 0px;
+}
+
+.ui-tabs-panel fieldset
+{
+  padding-top: 30px;
+}
+
+.ui-corner-all, .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr,
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
+{
+  border-radius: 0px;
+  border: none;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active
+{
+  background-color: #E3EDF8;
+  background-image: none;
+}
+
+.ui-widget-header
+{
+  background: none;
+}
+
+.ui-tabs
+{
+  padding: 0px;
+}
+
+.ui-state-default
+{
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited
+{
+  color: #3873A9;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default,
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus
+{
+  border-color: #E3EDF8;
+}
+
+.ui-widget-content
+{
+  background-color: transparent;
+}
+
+
+
+
+/*add by min.jiang 2012-10-12*/
+.search
+{
+    background-color:#a3cf68;
+     border: 1px solid #74A631;
+    }
+    
+    	
+    	.grid_header_th {
+    background-image: url("Images/HeaderBackground.png");
+    background-repeat: repeat-x;
+    color: #3873A9;
+    font-weight: normal;
+    cursor:pointer; 
+}
+.grid_header_th_sort_disable {
+    background-image: url("Images/HeaderBackground.png");
+    background-repeat: repeat-x;
+    color: #3873A9;
+    font-weight: normal;
+}
+   .sorting_asc {
+    background: url("dataTable/sort_asc.png") no-repeat scroll right center transparent;
+}
+.sorting_desc {
+    background: url("dataTable/sort_desc.png") no-repeat scroll right center transparent;
+}
+.sorting {
+    background: url("dataTable/sort_both.png") no-repeat scroll right center transparent;
+}
+
+

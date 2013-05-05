@@ -1,0 +1,12 @@
+﻿@model MenuHelperModel
+@using System.Web.Mvc.Html
+
+<ul  class="level1 static uldiv">
+    @foreach (var node in Model.Nodes) { 
+        <li class="static liul1">@Html.DisplayFor(m => node) 
+            @if (node.Children.Any()) {
+                @Html.DisplayFor(m => node.Children)
+            }
+        </li>
+    }
+</ul>

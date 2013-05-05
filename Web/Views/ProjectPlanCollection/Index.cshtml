@@ -1,0 +1,85 @@
+﻿@using ModelResources = LongHu.Framework.Resources.ProjectPlanCollectionResources
+@using GlobalResources = Resources.Global
+@model IEnumerable<LongHu.ObjectModel.ProjectPlanCollection>
+
+@{
+    ViewBag.Title = ModelResources.ListPageTitle;
+
+}
+
+<h2>@ModelResources.ListPageTitle</h2>
+
+@using (Html.BeginForm())
+{
+    
+    
+    <div id="selectRegion">
+       
+       
+            			      <span id="select-hold" class="open"></span>
+            				   <div>
+				   @Html.DropDownList("ProjectPlanId",string.Empty)
+				    <span>
+                       @ModelResources.LabelProjectPlanId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("ContractId",string.Empty)
+				    <span>
+                       @ModelResources.LabelContractId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("OrgChartId",string.Empty)
+				    <span>
+                       @ModelResources.LabelOrgChartId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("BidTypeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelBidTypeId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("DepartmentId",string.Empty)
+				    <span>
+                       @ModelResources.LabelDepartmentId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("ResearchOwnerEmployeeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelResearchOwnerEmployeeId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("EngeerEmployeeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelEngeerEmployeeId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("CostOwnerEmployeeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelCostOwnerEmployeeId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("AuthorEmployeeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelAuthorEmployeeId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("OrganizerEmployeeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelOrganizerEmployeeId </span>
+                  </div>
+				           
+       
+        <div style="float: right">
+           
+            <input type="submit" mth="@LongHu.Framework.ConstantManager.DisableDuplicateSubmitForm" value="@GlobalResources.LabelSearch" class="searchSumit" />
+        </div>
+    </div>
+	<div style="margin: 0px 0px 5px 0px">
+	    @Html.ActionLink(GlobalResources.ListActionCreate, "Create")
+	</div>
+	}
+ <div id="tbListView">
+    @Html.Partial("SearchListPartialView",Model as IPagedList)
+    </div>
+
+

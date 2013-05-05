@@ -1,0 +1,88 @@
+﻿@using ModelResources = LongHu.Framework.Resources.ProjectPlanResources
+@using GlobalResources = Resources.Global
+@model IEnumerable<LongHu.ObjectModel.ProjectPlan>
+
+
+<div class="gridViewOverflow">
+<table class="grid" cellpadding="0" cellspacing="0">
+    <tr class="header"  align="left">
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="ProjectName">@ModelResources.LabelProjectName</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="BidPlanNumber">@ModelResources.LabelBidPlanNumber</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="Description">@ModelResources.LabelDescription</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="CreatedOn">@ModelResources.LabelCreatedOn</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="ModifiedOn">@ModelResources.LabelModifiedOn</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="VersionName">@ModelResources.LabelVersionName</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="Version">@ModelResources.LabelVersion</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="IsForYear">@ModelResources.LabelIsForYear</th>
+       
+
+               
+			   <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="ProjectStructure">@ModelResources.LabelProjectStructureId</th>
+       
+
+               
+			   <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="OrgChart">@ModelResources.LabelOrgChartId</th>
+       
+
+               
+			   <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="Employee">@ModelResources.LabelAuthorEmployeeId</th>
+       
+
+                 <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="OperatedOn">@ModelResources.LabelOperatedOn</th>
+       
+
+               
+			   <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="Employee">@ModelResources.LabelOperatedByEmployeeId</th>
+       
+
+               
+			   <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="DataDictionary">@ModelResources.LabelProjectPlanInformationStatusId</th>
+        <th>@GlobalResources.LabelAction</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="row" valign="top" id="row-@item.Id">
+                 <td>@Html.DisplayFor(modelItem => item.ProjectName)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.BidPlanNumber)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.Description)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.CreatedOn)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.ModifiedOn)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.VersionName)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.Version)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.IsForYear)&nbsp;</td>
+               <td>@Html.DisplayFor(modelItem => item.ProjectStructure.Name)&nbsp;</td>
+               <td>@Html.DisplayFor(modelItem => item.OrgChart.Name)&nbsp;</td>
+               <td>@Html.DisplayFor(modelItem => item.Employee.Name)&nbsp;</td>
+                 <td>@Html.DisplayFor(modelItem => item.OperatedOn)&nbsp;</td>
+               <td>@Html.DisplayFor(modelItem => item.Employee.Name)&nbsp;</td>
+               <td>@Html.DisplayFor(modelItem => item.DataDictionary.Name)&nbsp;</td>
+        <td class="command">
+            @Html.ActionLink(GlobalResources.ListActionEdit, "Edit", new { id=item.Id }) |
+            @Html.ActionLink(GlobalResources.ListActionDetails, "Details", new { id=item.Id }) |
+        
+			<a href="#" class="deleteLink" data-id="@item.Id" data-delConfirmMessage="@ModelResources.DeleteConfirmMessage">@GlobalResources.ListActionDelete</a>
+        </td>
+
+    </tr>
+}
+
+</table>
+</div>
+<div id="Page">@Html.Partial("_Page", Model as IPagedList)</div>
+

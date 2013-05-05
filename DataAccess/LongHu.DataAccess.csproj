@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7282121-9191-4F4A-BC74-01CC5AEDF8B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LongHu.DataAccess</RootNamespace>
+    <AssemblyName>LongHu.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Pfizer.Arise">
+      <HintPath>..\Libraries\Pfizer.Arise.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EFImp\Dynamic.cs" />
+    <Compile Include="LongHu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LongHu.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Base\IRepository.cs" />
+    <Compile Include="Base\RepositoryFactory.cs" />
+    <Compile Include="EFImp\EFExtension.cs" />
+    <Compile Include="EFImp\EFRepository.cs" />
+    <Compile Include="EFImp\ConditionBuilder.cs" />
+    <Compile Include="EFImp\ExpressionVisitor.cs" />
+    <Compile Include="EFImp\PartialEvaluator.cs" />
+    <Compile Include="ContractRepository.cs" />
+    <Compile Include="DataDictionaryRepository.cs" />
+    <Compile Include="DepartmentRepository.cs" />
+    <Compile Include="EmployeeRepository.cs" />
+    <Compile Include="OrgChartRepository.cs" />
+    <Compile Include="ProjectPlanCollectionRepository.cs" />
+    <Compile Include="ProjectPlanRepository.cs" />
+    <Compile Include="ProjectStructureRepository.cs" />
+    <!--CompileFile-->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\LongHu.Framework.csproj">
+      <Project>{7A95D109-1A6F-4172-9F50-C6B6B55DF9CB}</Project>
+      <Name>LongHu.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectModel\LongHu.ObjectModel.csproj">
+      <Project>{37F404C0-77C8-4426-9218-02C0F8B6389D}</Project>
+      <Name>LongHu.ObjectModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="LongHu.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LongHu.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LongHu.edmx.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

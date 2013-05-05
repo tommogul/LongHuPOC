@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Vulns tag="pages">
+  <PreReq>
+  </PreReq>
+  <Vulnerability>
+    <Tag>pages</Tag>
+    <Property>enableViewState</Property>
+    <Value>false</Value>
+    <DefaultValue>true</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>Viewstate for CSRF</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        a:link { color: #0000cc; }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your configuration is disabled ViewState and this makes your application to 
+            vulnerable to CSRF attacks. </p>
+        <a name="What_is_CSRF_">
+        <p>
+            According to the </a>
+            <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" 
+                rel="nofollow">Wikipedia</a> description :
+        </p>
+        <blockquote style="max-width: 65em;">
+            Cross-site request forgery, also known as one-click attack or session riding and 
+            abbreviated as CSRF or XSRF, is a type of malicious exploit of a website whereby 
+            unauthorized commands are transmitted from a user that the website trusts.
+    </blockquote>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;pages enableViewState=&quot;<b>true</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">
+                http://msdn.microsoft.com/en-us/library/950xf363.aspx</li>
+            <li class="style2">
+                http://www.owasp.org/index.php/.Net_CSRF_Guard</li>
+            <li class="style2">http://www.codinghorror.com/blog/archives/001171.html</li>
+    </ul>
+	
+	<p>
+        &nbsp;</p>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+  <Vulnerability>
+    <Tag>pages</Tag>
+    <Property>enableViewStateMac</Property>
+    <Value>false</Value>
+    <DefaultValue>true</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>No integrity check on ViewState</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        a:link { color: #0000cc; }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your application doesn&#39;t check ViewState integrity. This can lead tampering 
+            attacks on ViewState.</p>
+<h3 class="style5">
+            Secure Configuration
+                </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;pages enableViewStateMac=&quot;<b>true</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">
+                http://msdn.microsoft.com/en-us/library/950xf363.aspx</li>
+            <li class="style2">
+        http://www.owasp.org/index.php/.Net_CSRF_Guard</li>
+            <li class="style2">http://weblogs.asp.net/varad/archive/2005/02/04/367056.aspx</li>
+    </ul>
+	
+	<p>
+        &nbsp;</p>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+  <Vulnerability>
+    <Tag>pages</Tag>
+    <Property>viewStateEncryptionMode</Property>
+    <Value>Never</Value>
+    <DefaultValue>Auto</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>ViewState is not encrypted</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        a:link { color: #0000cc; }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            ViewState is not encrypted. An attacker that can be able to monitor your 
+            network, can easily analyze &amp; steal your session variables. </p>
+        <h3 class="style5">
+            Secure Configuration
+                </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;pages 
+            viewStateEncryptionMode=&quot;<b>Always</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">
+                http://msdn.microsoft.com/en-us/library/950xf363.aspx</li>
+            <li class="style2">
+        http://www.owasp.org/index.php/.Net_CSRF_Guard</li>
+            <li class="style2">
+                http://blah.winsmarts.com/2006-7-Viewstate_Security_-and-_WebFarms.aspx</li>
+    </ul>
+	
+	<p>
+        &nbsp;</p>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+  <Vulnerability>
+    <Tag>pages</Tag>
+    <Property>viewStateEncryptionMode</Property>
+    <Value>Auto</Value>
+    <DefaultValue>Auto</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>ViewState may not be encrypted</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        a:link { color: #0000cc; }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            ViewState is only encrypted if one control requests it.So it is not encrypted in 
+            most situations and an attacker that can be able to monitor your network, can 
+            easily analyze &amp; steal your session variables. </p>
+<h3 class="style5">
+            Secure Configuration
+                </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;pages 
+            viewStateEncryptionMode=&quot;<b>Always</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">
+                http://msdn.microsoft.com/en-us/library/950xf363.aspx</li>
+            <li class="style2">
+        http://www.owasp.org/index.php/.Net_CSRF_Guard</li>
+            <li class="style2">
+                http://blah.winsmarts.com/2006-7-Viewstate_Security_-and-_WebFarms.aspx</li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+  <Vulnerability>
+    <Tag>pages</Tag>
+    <Property>validateRequest</Property>
+    <Value>false</Value>
+    <DefaultValue>true</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>Page Validation is not using</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        a:link { color: #0000cc; }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Request validation is a good mechanism that prevents Cross-Site Scripting 
+            attacks. It is disabled at your configuration so your web application can be 
+            affected XSS vulnerabilities.</p>
+<h3 class="style5">
+            Secure Configuration
+                </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;pages validateRequest=&quot;<b>true</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">
+                http://msdn.microsoft.com/en-us/library/950xf363.aspx</li>
+            <li class="style2">
+                http://www.asp.net/learn/whitepapers/request-validation/</li>
+    </ul>
+	
+	<p>
+        &nbsp;</p>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+</Vulns>

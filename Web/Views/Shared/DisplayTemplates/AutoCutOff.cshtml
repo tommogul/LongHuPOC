@@ -1,0 +1,2 @@
+﻿@model string
+@(Model.Length > 38 ? Html.Raw(Model.Substring(0, 38) + "...") : Html.Raw(Model))

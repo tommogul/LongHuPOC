@@ -1,0 +1,648 @@
+﻿@using ModelResources = LongHu.Framework.Resources.ProjectPlanCollectionResources
+@using GlobalResources = Resources.Global
+@model LongHu.ObjectModel.ProjectPlanCollection
+@{
+    if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Edit)
+    {
+        ViewBag.Title = ModelResources.EditPageTitle;
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Create)
+    {
+        ViewBag.Title = ModelResources.CreatePageTitle;
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details)
+    {
+        ViewBag.Title = ModelResources.DetailsPageTitle;
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+    {
+        ViewBag.Title = ModelResources.DeletePageTitle;
+    }
+
+}
+
+<h2>@ViewBag.Title</h2>
+@if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+    {
+        <h3>@ModelResources.DeleteConfirmMessage</h3>
+    }
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(ModelResources.CreateValidationSummaryMessage, true)
+    <fieldset>
+      
+        <ol>
+
+		@if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Edit
+            || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+        {
+            @Html.HiddenFor(model => model.Id)
+        }
+
+            @Html.HiddenFor(model => model.Id)
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.Year, ModelResources.LabelYear)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.Year)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.Year)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.Year)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.AgreementNumber, ModelResources.LabelAgreementNumber)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.AgreementNumber)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.AgreementNumber)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.AgreementNumber)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.Unit, ModelResources.LabelUnit)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.Unit)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.Unit)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.Unit)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.Number, ModelResources.LabelNumber)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.Number)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.Number)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.Number)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.UnitPrice, ModelResources.LabelUnitPrice)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.UnitPrice)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.UnitPrice)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.UnitPrice)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.EstimateValue, ModelResources.LabelEstimateValue)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.EstimateValue)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.EstimateValue)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.EstimateValue)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.QualityRequirement, ModelResources.LabelQualityRequirement)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.QualityRequirement)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.QualityRequirement)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.QualityRequirement)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ReviewTime, ModelResources.LabelReviewTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.ReviewTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.ReviewTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.ReviewTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.DrawingProvidedTime, ModelResources.LabelDrawingProvidedTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.DrawingProvidedTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.DrawingProvidedTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.DrawingProvidedTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ContractTime, ModelResources.LabelContractTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.ContractTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.ContractTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.ContractTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.BidStartedTime, ModelResources.LabelBidStartedTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.BidStartedTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.BidStartedTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.BidStartedTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.BidSeningTime, ModelResources.LabelBidSeningTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.BidSeningTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.BidSeningTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.BidSeningTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.BidReturnTime, ModelResources.LabelBidReturnTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.BidReturnTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.BidReturnTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.BidReturnTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.BidCheckTime, ModelResources.LabelBidCheckTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.BidCheckTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.BidCheckTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.BidCheckTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ContractSignTime, ModelResources.LabelContractSignTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.ContractSignTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.ContractSignTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.ContractSignTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ComingIntoTime, ModelResources.LabelComingIntoTime)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.ComingIntoTime)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.ComingIntoTime)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.ComingIntoTime)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.Comments, ModelResources.LabelComments)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.Comments)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.Comments)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.Comments)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.CreatedOn, ModelResources.LabelCreatedOn)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.CreatedOn)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.CreatedOn)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.CreatedOn)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ModifiedOn, ModelResources.LabelModifiedOn)
+        </div>
+        <div class="valueLabel">
+				     @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.ModifiedOn)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.ModifiedOn)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.ModifiedOn)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ProjectPlanId, ModelResources.LabelProjectPlanId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.ProjectPlan.Name)
+                      @Html.HiddenFor(model => model.ProjectPlanId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("ProjectPlanId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.ProjectPlanId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ContractId, ModelResources.LabelContractId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.Contract.Name)
+                      @Html.HiddenFor(model => model.ContractId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("ContractId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.ContractId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.OrgChartId, ModelResources.LabelOrgChartId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.OrgChart.Name)
+                      @Html.HiddenFor(model => model.OrgChartId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("OrgChartId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.OrgChartId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.BidTypeId, ModelResources.LabelBidTypeId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.DataDictionary.Name)
+                      @Html.HiddenFor(model => model.BidTypeId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("BidTypeId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.BidTypeId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.DepartmentId, ModelResources.LabelDepartmentId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.Department.Name)
+                      @Html.HiddenFor(model => model.DepartmentId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("DepartmentId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.DepartmentId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ResearchOwnerEmployeeId, ModelResources.LabelResearchOwnerEmployeeId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.Employee.Name)
+                      @Html.HiddenFor(model => model.ResearchOwnerEmployeeId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("ResearchOwnerEmployeeId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.ResearchOwnerEmployeeId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.EngeerEmployeeId, ModelResources.LabelEngeerEmployeeId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.Employee.Name)
+                      @Html.HiddenFor(model => model.EngeerEmployeeId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("EngeerEmployeeId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.EngeerEmployeeId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.CostOwnerEmployeeId, ModelResources.LabelCostOwnerEmployeeId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.Employee.Name)
+                      @Html.HiddenFor(model => model.CostOwnerEmployeeId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("CostOwnerEmployeeId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.CostOwnerEmployeeId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.AuthorEmployeeId, ModelResources.LabelAuthorEmployeeId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.Employee.Name)
+                      @Html.HiddenFor(model => model.AuthorEmployeeId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("AuthorEmployeeId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.AuthorEmployeeId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.OrganizerEmployeeId, ModelResources.LabelOrganizerEmployeeId)
+        </div>
+        <div class="valueLabel">
+                
+				    @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details
+                   || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                    {
+                      @Html.DisplayFor(model => model.Employee.Name)
+                      @Html.HiddenFor(model => model.OrganizerEmployeeId)
+                 
+                     }
+                     else 
+                     {
+                     
+                       @Html.DropDownList("OrganizerEmployeeId")
+                     }
+                  
+           @Html.ValidationMessageFor(model => model.OrganizerEmployeeId)
+        </div>
+        </li>
+
+  </ol>
+    </fieldset>
+    <fieldset class="submit">
+           @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Edit)
+    {
+        <input type="submit" value="@GlobalResources.EditAction" name="Edit" />
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Create)
+    {
+        <input type="submit" value="@GlobalResources.CreateAction" name="Create" />
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+    {
+        <input type="submit" value="@GlobalResources.DeleteAction" name="Delete" />
+    }
+    </fieldset>
+}
+<p>
+
+    @Html.ActionLink(GlobalResources.BackToListAction, "Index")
+</p>
+
+

@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML Studio Developer Edition (Trial) 8.1.7.2743 (http://www.liquid-technologies.com)-->
+<xs:schema attributeFormDefault="unqualified" blockDefault="" finalDefault="" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Color">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Black" />
+                <xs:enumeration value="Dark Red" />
+                <xs:enumeration value="Red" />
+                <xs:enumeration value="Pink" />
+                <xs:enumeration value="Rose" />
+                <xs:enumeration value="Periwinkle" />
+                <xs:enumeration value="Dark Blue+" />
+                <xs:enumeration value="Brown" />
+                <xs:enumeration value="Orange" />
+                <xs:enumeration value="Light Orange" />
+                <xs:enumeration value="Gold" />
+                <xs:enumeration value="Tan" />
+                <xs:enumeration value="Plum+" />
+                <xs:enumeration value="Pink+" />
+                <xs:enumeration value="Olive Green" />
+                <xs:enumeration value="Dark Yellow" />
+                <xs:enumeration value="Lime" />
+                <xs:enumeration value="Yellow" />
+                <xs:enumeration value="Light Yellow" />
+                <xs:enumeration value="Ivory" />
+                <xs:enumeration value="Yellow+" />
+                <xs:enumeration value="Dark Green" />
+                <xs:enumeration value="Green" />
+                <xs:enumeration value="Sea Green" />
+                <xs:enumeration value="Bright Green" />
+                <xs:enumeration value="Light Green" />
+                <xs:enumeration value="Lite Turquoise" />
+                <xs:enumeration value="Turquoise+" />
+                <xs:enumeration value="Dark Teal" />
+                <xs:enumeration value="Teal" />
+                <xs:enumeration value="Aqua" />
+                <xs:enumeration value="Turquoise" />
+                <xs:enumeration value="Light Turquoise" />
+                <xs:enumeration value="Dark Purple" />
+                <xs:enumeration value="Violet+" />
+                <xs:enumeration value="Dark Blue" />
+                <xs:enumeration value="Blue" />
+                <xs:enumeration value="Light Blue" />
+                <xs:enumeration value="Sky Blue" />
+                <xs:enumeration value="Pale Blue" />
+                <xs:enumeration value="Coral" />
+                <xs:enumeration value="Dark Red+" />
+                <xs:enumeration value="Indigo" />
+                <xs:enumeration value="Blue-Gray" />
+                <xs:enumeration value="Violet" />
+                <xs:enumeration value="Plum" />
+                <xs:enumeration value="Lavender" />
+                <xs:enumeration value="Ocean Blue" />
+                <xs:enumeration value="Teal+" />
+                <xs:enumeration value="Gray-80%" />
+                <xs:enumeration value="Gray-50%" />
+                <xs:enumeration value="Gray-40%" />
+                <xs:enumeration value="Gray-25%" />
+                <xs:enumeration value="White" />
+                <xs:enumeration value="Ice Blue" />
+                <xs:enumeration value="Blue+" />
+                <xs:enumeration value="#000000" />
+                <xs:enumeration value="#800000" />
+                <xs:enumeration value="#FF0000" />
+                <xs:enumeration value="#FF00FF" />
+                <xs:enumeration value="#FF99CC" />
+                <xs:enumeration value="#9999FF" />
+                <xs:enumeration value="#000080" />
+                <xs:enumeration value="#993300" />
+                <xs:enumeration value="#FF6600" />
+                <xs:enumeration value="#FF9900" />
+                <xs:enumeration value="#FFCC00" />
+                <xs:enumeration value="#FFCC99" />
+                <xs:enumeration value="#993366" />
+                <xs:enumeration value="#333300" />
+                <xs:enumeration value="#808000" />
+                <xs:enumeration value="#99CC00" />
+                <xs:enumeration value="#FFFF00" />
+                <xs:enumeration value="#FFFF99" />
+                <xs:enumeration value="#FFFFCC" />
+                <xs:enumeration value="#003300" />
+                <xs:enumeration value="#008000" />
+                <xs:enumeration value="#339966" />
+                <xs:enumeration value="#00FF00" />
+                <xs:enumeration value="#CCFFCC" />
+                <xs:enumeration value="#CCFFFF" />
+                <xs:enumeration value="#00FFFF" />
+                <xs:enumeration value="#003366" />
+                <xs:enumeration value="#008080" />
+                <xs:enumeration value="#33CCCC" />
+                <xs:enumeration value="#660066" />
+                <xs:enumeration value="#800080" />
+                <xs:enumeration value="#0000FF" />
+                <xs:enumeration value="#3366FF" />
+                <xs:enumeration value="#00CCFF" />
+                <xs:enumeration value="#99CCFF" />
+                <xs:enumeration value="#FF8080" />
+                <xs:enumeration value="#333399" />
+                <xs:enumeration value="#666699" />
+                <xs:enumeration value="#CC99FF" />
+                <xs:enumeration value="#0066CC" />
+                <xs:enumeration value="#333333" />
+                <xs:enumeration value="#808080" />
+                <xs:enumeration value="#969696" />
+                <xs:enumeration value="#C0C0C0" />
+                <xs:enumeration value="#FFFFFF" />
+                <xs:enumeration value="#CCCCFF" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="LineStyle">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="None" />
+                <xs:enumeration value="Thin" />
+                <xs:enumeration value="Medium" />
+                <xs:enumeration value="Dashed" />
+                <xs:enumeration value="Dotted" />
+                <xs:enumeration value="Thick" />
+                <xs:enumeration value="Double" />
+                <xs:enumeration value="Hair" />
+                <xs:enumeration value="MediumDashed" />
+                <xs:enumeration value="DashDot" />
+                <xs:enumeration value="MediumDashDot" />
+                <xs:enumeration value="DashDotDot" />
+                <xs:enumeration value="MediumDashDotDot" />
+                <xs:enumeration value="SlantedDashDot" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Cell">
+        <xs:complexType>
+            <xs:attribute name="Name" type="xs:string" />
+            <xs:attribute name="Binding" type="xs:string" />
+            <xs:attribute name="Value" type="xs:string" />
+            <xs:attribute name="StyleName" type="xs:string" />
+            <xs:attribute name="Width" type="xs:int" />
+            <xs:attribute name="ColSpan" type="xs:int" />
+            <xs:attribute name="RowSpan" type="xs:int" />
+            <xs:attribute name="Height" type="xs:int" />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Row">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Cell" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:int" />
+            <xs:attribute name="StyleName" type="xs:string" />
+            <xs:attribute name="Height" type="xs:int" />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Column">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Cell" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:int" />
+            <xs:attribute name="StyleName" type="xs:string" />
+            <xs:attribute name="Width" type="xs:int" />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Template">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element ref="Row" minOccurs="1" maxOccurs="unbounded" />
+                    <xs:element ref="Column" minOccurs="1" maxOccurs="unbounded" />
+                </xs:choice>
+                <xs:element ref="Template" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="Name" type="xs:string" />
+            <xs:attribute name="DataSource" type="xs:string" use="required" />
+            <xs:attribute name="Hidden" type="xs:boolean" use="required" />
+            <xs:attribute name="Group" type="xs:boolean" use="required" />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Excel">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Config" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Builder" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                    <xs:attribute name="Type" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="DataConstructor" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                    <xs:attribute name="Type" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Rules" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Rule" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                    <xs:attribute name="Type" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Name" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Styles" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Style" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Borders" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="TopBorder" minOccurs="0" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                                <xs:element ref="LineStyle" minOccurs="0" maxOccurs="1" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="RightBorder" minOccurs="0" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                                <xs:element ref="LineStyle" minOccurs="0" maxOccurs="1" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="BottomBorder" minOccurs="0" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                                <xs:element ref="LineStyle" minOccurs="0" maxOccurs="1" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="LeftBorder" minOccurs="0" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                                <xs:element ref="LineStyle" minOccurs="0" maxOccurs="1" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="DiagonalDown" minOccurs="0" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                                <xs:element ref="LineStyle" minOccurs="0" maxOccurs="1" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="DiagonalUp" minOccurs="0" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                                <xs:element ref="LineStyle" minOccurs="0" maxOccurs="1" />
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Background" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="Pattern" minOccurs="0" maxOccurs="1">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="None" />
+                                                                <xs:enumeration value="Solid" />
+                                                                <xs:enumeration value="Gray50" />
+                                                                <xs:enumeration value="Gray75" />
+                                                                <xs:enumeration value="Gray25" />
+                                                                <xs:enumeration value="HorizontalStripe" />
+                                                                <xs:enumeration value="VerticalStripe" />
+                                                                <xs:enumeration value="ReverseDiagonalStripe" />
+                                                                <xs:enumeration value="DiagonalStripe" />
+                                                                <xs:enumeration value="DiagonalCrosshatch" />
+                                                                <xs:enumeration value="ThickDiagonalCrosshatch" />
+                                                                <xs:enumeration value="ThinHorizontalStripe" />
+                                                                <xs:enumeration value="ThinVerticalStripe" />
+                                                                <xs:enumeration value="ThinReverseDiagonalStripe" />
+                                                                <xs:enumeration value="ThinDiagonalStripe" />
+                                                                <xs:enumeration value="ThinHorizontalCrosshatch" />
+                                                                <xs:enumeration value="ThinDiagonalCrosshatch" />
+                                                                <xs:enumeration value="Gray12" />
+                                                                <xs:enumeration value="Gray6" />
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Font" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="Size" type="xs:int" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="IsBold" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="IsItalic" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element ref="Color" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="IsStrikeout" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="IsSubscript" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                                    <xs:element name="IsSuperscript" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="HorizontalAlignment" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="Bottom" />
+                                                    <xs:enumeration value="Center" />
+                                                    <xs:enumeration value="CenterAcross" />
+                                                    <xs:enumeration value="Distributed" />
+                                                    <xs:enumeration value="Fill" />
+                                                    <xs:enumeration value="General" />
+                                                    <xs:enumeration value="Justify" />
+                                                    <xs:enumeration value="Left" />
+                                                    <xs:enumeration value="Right" />
+                                                    <xs:enumeration value="Top" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="VerticalAlignment" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="Bottom" />
+                                                    <xs:enumeration value="Center" />
+                                                    <xs:enumeration value="CenterAcross" />
+                                                    <xs:enumeration value="Distributed" />
+                                                    <xs:enumeration value="Fill" />
+                                                    <xs:enumeration value="General" />
+                                                    <xs:enumeration value="Justify" />
+                                                    <xs:enumeration value="Left" />
+                                                    <xs:enumeration value="Right" />
+                                                    <xs:enumeration value="Top" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="IndentLevel" type="xs:int" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="IsFormulaHidden" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="IsLocked" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="IsTextWrapped" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="Rotation" type="xs:int" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="ShrinkToFit" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="Number" type="xs:boolean" minOccurs="0" maxOccurs="1" />
+                                        <xs:element name="Custom" type="xs:string" minOccurs="0" />
+                                    </xs:sequence>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Name" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Workbook">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Worksheet" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Body" minOccurs="1" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:element ref="Row" minOccurs="1" maxOccurs="unbounded" />
+                                                        <xs:element ref="Column" minOccurs="1" maxOccurs="unbounded" />
+                                                    </xs:choice>
+                                                    <xs:element ref="Template" minOccurs="0" maxOccurs="unbounded" />
+                                                </xs:sequence>
+                                                <xs:attribute name="Name" type="xs:string" />
+                                                <xs:attribute name="StyleName" type="xs:string" />
+                                                <xs:attribute name="MarginLeft" type="xs:int" />
+                                                <xs:attribute name="MarginTop" type="xs:int" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                    <xs:attribute name="Builder" type="xs:string" use="required" />
+                                    <xs:attribute name="FrozenCell" type="xs:string" />
+                                    <xs:attribute name="IsOverrideExists" type="xs:string" />
+                                    <xs:attribute name="SummaryRowBelow" type="xs:boolean" />
+                                    <xs:attribute name="IsGridLinesVisible" type="xs:boolean" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Name" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DataContainer">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DataSource" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="DataItem" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="Name" type="xs:string" />
+                                                <xs:attribute name="PropertyName" type="xs:string" />
+                                                <xs:attribute name="Type" type="xs:string" />
+                                                <xs:attribute name="RuleName" type="xs:string" />
+                                                <xs:attribute name="Ignore" type="xs:boolean" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Name" type="xs:string" use="required" />
+                                    <xs:attribute name="SheetName" type="xs:string" use="required" />
+                                    <xs:attribute name="MarginTop" type="xs:unsignedByte" />
+                                    <xs:attribute name="MarginLeft" type="xs:unsignedByte" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="Name" type="xs:string" use="required" />
+                        <xs:attribute name="Constructor" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

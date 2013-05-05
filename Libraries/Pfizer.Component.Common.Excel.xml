@@ -1,0 +1,1406 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pfizer.Component.Common.Excel</name>
+    </assembly>
+    <members>
+        <member name="T:Pfizer.Component.Common.Excel.DataContructor">
+            <summary>
+            This class is the abstract base class for data contructor that read data from
+            excel to object
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.DataContructor.ConstructData(Aspose.Cells.Workbook,Pfizer.Component.Common.Excel.Context)">
+            <summary>
+            Construct data from excel data according to configuration
+            </summary>
+            <param name="workbook"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.RuleManager">
+            <summary>
+            This class used for managing checking rules
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.RuleManager.#ctor">
+            <summary>
+            Construct methods
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.RuleManager.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Construct methods
+            </summary>
+            <param name="rules"></param>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.RuleManager.FromXml(System.Xml.XmlNode)">
+            <summary>
+            Initialize rule collection from configurated xml rules
+            </summary>
+            <param name="rules"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.RuleManager.Item(System.String)">
+            <summary>
+            Get rule by rule name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.WorksheetConfig">
+            <summary>
+            This class represents the Worksheet config element
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.ConfigItem">
+            <summary>
+            This class is abstract base class all config item,
+            all ConfigItem derived class has the reference to parent and children
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.Search(System.String)">
+            <summary>
+            Recersive search for config item collection that with given name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.SearchOne(System.String)">
+            <summary>
+            Recersive search for the first element match given name
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.Add(Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Add sub element to current element, this sub element is limited for fixed config tree. 
+            For more detail, please refer to excel.xsd
+            </summary>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.AddBefore(Pfizer.Component.Common.Excel.Config.ConfigItem,Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Add sub element to current element before give element, this sub element is limited
+            for fixed config tree. For more detail, please refer to excel.xsd
+            </summary>
+            <param name="configItemToAdd"></param>
+            <param name="configItemOriginal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.InsertAt(System.Int32,Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Add sub element to current element at index, this sub element is limited
+            for fixed config tree. For more detail, please refer to excel.xsd
+            </summary>
+            <param name="index"></param>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.RemoveAt(System.Int32)">
+            <summary>
+            Remove sub element at index
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.Remove(Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Remove sub element
+            </summary>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.Contains(Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Check whether current element contains the configItem
+            </summary>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.FromXml(System.Xml.XmlNode)">
+            <summary>
+            Initialize current object from xml node
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.ToXml">
+            <summary>
+            Export object as xml node
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.Clone">
+            <summary>
+            Deep clone current config item
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ConfigItem.CanAdd(Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Check whether configItem can be added as sub item, this item must follow the config tree.
+            For more detail, please refer to excel.xsd
+            </summary>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.ConfigItem.Name">
+            <summary>
+            Set or get configItem Name
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.ConfigItem.ConfigItems">
+            <summary>
+            Get direct sub config items
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.ConfigItem.AllConfigItems">
+            <summary>
+            Recursive get all sub config items
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.ConfigItem.Parent">
+            <summary>
+            Set or get parent element
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.ConfigItem.IsRoot">
+            <summary>
+            Get whether current element is root item
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.ConfigItem.IsLeaf">
+            <summary>
+            Get whether current element is leaf item
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetCellBuiltEventHandler">
+            <summary>
+            This delegate used for excel cell built event
+            </summary>
+            <param name="sender"></param>
+            <param name="cellArgs"></param>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Util.ExcelHelper">
+            <summary>
+            Helper class for excel
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ExcelHelper.CreateWorkbook">
+            <summary>
+            Create a new empty workbook
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetPreBuildEventHandler">
+            <summary>
+            This delegate used for excel worksheet pre-build event
+            </summary>
+            <param name="sender"></param>
+            <param name="elementArgs"></param>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.WorksheetBuilderFactory">
+            <summary>
+            This class used as the factory for creating new worksheet builder
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilderFactory.Create(System.String)">
+            <summary>
+            Create new worksheet builder by type name
+            </summary>
+            <param name="builderTypeName">Full builder type name, type must have the default constructor method.</param>
+            <returns>Instance with given type</returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetPreBuildEventArgs">
+            <summary>
+            This class used for pre-build event
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Event.WorksheetPreBuildEventArgs.#ctor(Pfizer.Component.Common.Excel.Context)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context">Current context</param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetPreBuildEventArgs.Context">
+            <summary>
+            Get current context
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetPreBuildEventArgs.CancelEvent">
+            <summary>
+            Set or get whether current event handler chain end
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetRowBuiltEventArgs">
+            <summary>
+            This class used for excel worksheet row built event
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Event.WorksheetRowBuiltEventArgs.#ctor(Pfizer.Component.Common.Excel.Config.RowConfig,System.Data.DataRow,Pfizer.Component.Common.Excel.Context)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="rowConfig"></param>
+            <param name="row"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetRowBuiltEventArgs.RowConfig">
+            <summary>
+            Set or get row config
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetRowBuiltEventArgs.Row">
+            <summary>
+            Set or get data row of datasource
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetRowBuiltEventArgs.Context">
+            <summary>
+            Set or get current context
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Context">
+            <summary>
+            This class used to store Excel Export related objects
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Context.isMerged(System.Drawing.Point)">
+            <summary>
+            Check if give point in merged
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.RuleManager">
+            <summary>
+            Set or get check rule manager
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.StyleManager">
+            <summary>
+            Set or get all styles
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.ConfigItem">
+            <summary>
+            Set or get current configItem
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.DataSource">
+            <summary>
+            Set or get data source
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.ActiveWorkbook">
+            <summary>
+            Set or get active workbook
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.ActiveWorksheet">
+            <summary>
+            Set or get active worksheet
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.ActiveCell">
+            <summary>
+            Set or get active cell
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.AcitvePosition">
+            <summary>
+            Set or get active position
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.MergedPositions">
+            <summary>
+            Set or get merged positions
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.FixedWidthColumns">
+            <summary>
+            Record columns whose width is fixed
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Context.ImportResult">
+            <summary>
+            Store check result
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.DataSourceConfig">
+            <summary>
+            This class represents the DataSource config element
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataSourceConfig.TypeName">
+            <summary>
+            Set or get type name that excel data will be imported as
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataSourceConfig.SheetName">
+            <summary>
+            Set or get excel sheet name data will be imported from
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataSourceConfig.MarginTop">
+            <summary>
+            Set or get margin top of data range in excel
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataSourceConfig.MarginLeft">
+            <summary>
+            Set or get margin left of data range in excel
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataSourceConfig.MaxRowCount">
+            <summary>
+            Set or get max excel row count that data will import from
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.DataContainerConfig">
+            <summary>
+            This class represents the DataContainer config element
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataContainerConfig.Constructor">
+            <summary>
+            Set or get data container constructor, 
+            this constructor should have been configured in configuration file
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.WorkbookConfig">
+            <summary>
+            This class represents the Workbook config element
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Util.ConfigHelper">
+            <summary>
+            Helper class for config
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.FindXmlNode(System.Xml.XmlNode,System.String)">
+            <summary>
+            Retrieve element list from parent xml node by section name
+            </summary>
+            <param name="parentNode"></param>
+            <param name="sectionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.GetChildren(System.Xml.XmlNode)">
+            <summary>
+            Retrieve element list from parent xml node
+            </summary>
+            <param name="parentNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.FindFirstXmlNode(System.Xml.XmlNodeList,System.String,System.String)">
+            <summary>
+            Retrieve the first element from element list
+            </summary>
+            <param name="nodeList"></param>
+            <param name="propertyName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.FindFirstXmlNode(System.Xml.XmlNode,System.String)">
+            <summary>
+            Retrieve the first element from current section
+            </summary>
+            <param name="parentNode"></param>
+            <param name="sectionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.GetPropertyValue(System.Xml.XmlNode,System.String)">
+            <summary>
+            Retrieve the property value from the xml node
+            </summary>
+            <param name="node"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.GetFirstNodeValue(System.Xml.XmlNode,System.String)">
+            <summary>
+            Retrieve the first node value from the xml section
+            </summary>
+            <param name="parent"></param>
+            <param name="sectionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.GetColorFromString(System.String)">
+            <summary>
+            Convert value from string to color, support named color and hex color
+            e.g. Red, #FF0000
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.GetIntFromString(System.String,System.Int32)">
+            <summary>
+            Convert value from string to int
+            </summary>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.GetBooleanFromString(System.String,System.Boolean)">
+            <summary>
+            Convert value from string to boolean
+            </summary>
+            <param name="value"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.GetConfigurationNode(System.Xml.XmlNode)">
+            <summary>
+            Get the actual configuration node.
+            if "file" attribute is specified
+            and the corresponding file is a valid config file,
+            the XmlNode in the external config file will be returned.
+            otherwise, the originalNode will be returned.
+            if the file is not specified correctly, it will be ignored.
+            </summary>
+            <param name="originalNode"></param>
+            <returns>XmlNode</returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Util.ConfigHelper.EqualsIgnoreCase(System.String,System.String)">
+            <summary>
+            Compare two string ignore case
+            </summary>
+            <param name="strA"></param>
+            <param name="strB"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.WorksheetBuilder">
+            <summary>
+            This class is the abstract base class for worksheet builder
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilder.CreateWorksheet(Pfizer.Component.Common.Excel.Context)">
+            <summary>
+            Create worksheet according to configuration
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilder.BuildHead">
+            <summary>
+            Build excel header
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilder.BuildBody">
+            <summary>
+            Build excel body
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilder.BuildTail">
+            <summary>
+            Build excel tailer
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilder.GetResult">
+            <summary>
+            Retrieve build result
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilder.NotifyWorksheetRowBuilt(System.Object,Pfizer.Component.Common.Excel.Event.WorksheetRowBuiltEventArgs)">
+            <summary>
+            Invoke WorksheetRowBuilt event
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.WorksheetBuilder.NotifyWorksheetCellBuilt(System.Object,Pfizer.Component.Common.Excel.Event.WorksheetCellBuiltEventArgs)">
+            <summary>
+            Invoke WorksheetCellBuilt event
+            </summary>
+        </member>
+        <member name="E:Pfizer.Component.Common.Excel.WorksheetBuilder.WorksheetRowBuilt">
+            <summary>
+            Event handler for worksheet row built
+            </summary>
+        </member>
+        <member name="E:Pfizer.Component.Common.Excel.WorksheetBuilder.WorksheetCellBuilt">
+            <summary>
+            Event handler for worksheet cell built
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.RuleCheckError">
+            <summary>
+            This class represents the rule check result
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.RuleCheckError.RuleName">
+            <summary>
+            Set or get rule check rule name that raise the error
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.RuleCheckError.CellName">
+            <summary>
+            Set or get excel cell name that error occur
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.RuleCheckError.CellValue">
+            <summary>
+            Set or get excel cell value that error occur
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.TailConfig">
+            <summary>
+            This class represents the Tail config element
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.TailConfig.StyleName">
+            <summary>
+            Set or get style name
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.TailConfig.MarginLeft">
+            <summary>
+            Set or get margin left
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.TailConfig.MarginTop">
+            <summary>
+            Set or get margin top
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetRowBuiltEventHandler">
+            <summary>
+            This class used for excel worksheet row built event
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorkbookConfigLoadedEventArgs">
+            <summary>
+            This delegate used for excel workbook config loaded event
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Event.WorkbookConfigLoadedEventArgs.#ctor(Pfizer.Component.Common.Excel.Config.WorkbookConfig,System.Object)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="workbookConfig"></param>
+            <param name="dataSource"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorkbookConfigLoadedEventArgs.WorkbookConfig">
+            <summary>
+            Set or get current workbook config item
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorkbookConfigLoadedEventArgs.DataSource">
+            <summary>
+            Set or get current datasource
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.IRule">
+            <summary>
+            This interface used for defining import checking rule
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.IRule.Check(System.Object,Pfizer.Component.Common.Excel.Config.DataItemConfig)">
+            <summary>
+            Check current excel cell value with current rule according to config
+            </summary>
+            <param name="value">Excel current cell value</param>
+            <param name="dataItemConfig">DataItemConfig configured in configuration file</param>
+            <returns>Follow current rule then True else False</returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.ColumnConfig">
+            <summary>
+            This class represents the Column config element
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Util.ExcelConstants">
+            <summary>
+            This class defined all excel configuration Section Name, Property Name
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigExcelSectionNameKey">
+            <summary>
+            The root config element &lt;B&gt;Excel&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigConfigSectionNameKey">
+            <summary>
+            The config element for assambly or type reference &lt;B&gt;Config&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigBuilderSectionNameKey">
+            <summary>
+            The config element for excel builder assambly or type reference &lt;B&gt;Builder&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigStylesSectionNameKey">
+            <summary>
+            The config element for style collection &lt;B&gt;Styles&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigStyleSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Style&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigRulesSectionNameKey">
+            <summary>
+            The config element for check rules collection &lt;B&gt;Rules&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigRuleSectionNameKey">
+            <summary>
+            The config element for check rule &lt;B&gt;Rule&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigBackgroudSectionNameKey">
+            <summary>
+            The config element for style background &lt;B&gt;Background&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigColorSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Color&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPatternSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Pattern&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigBordersSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Borders&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigLeftBorderSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;LeftBorder&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigRightBorderSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;RightBorder&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigTopBorderSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;TopBorder&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigBottomBorderSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;BottomBorder&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigDiagonalDownSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;DiagonalDown&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigDiagonalUpSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;DiagonalUp&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigFontSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Font&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigSizeSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Size&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsBoldSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;IsBold&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsItalicSectionNameKey">
+            <summary>
+            The config element for &lt;B&gt;IsItalic&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsStrikeoutSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;IsStrikeout&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsSubscriptSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;IsSubscript&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsSuperscriptSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;IsSuperscript&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigHorizontalAlignmentSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;HorizontalAlignment&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigVerticalAlignmentSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;VerticalAlignment&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIndentLevelSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;IndentLevel&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsFormulaHiddenSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;IsFormulaHidden&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsLockedSectionNameKey">
+            <summary>
+            The config element for whether lock cell or range &lt;B&gt;IsLocked&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsTextWrappedSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;IsTextWrapped&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigRotationSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Rotation&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigShrinkToFitSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;ShrinkToFit&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigTextDirectionSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;TextDirection&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigNumberSectionNameKey">
+            <summary>
+            The config element for style &lt;B&gt;Number&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigCustomSectionNameKey">
+            <summary>
+            The config element for format &lt;B&gt;Custom&lt;/ B&gt; e.g. #,##0.00
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigLineStyleSectionNameKey">
+            <summary>
+            The config element for line style &lt;B&gt;LineStyle&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigWorkbookSectionNameKey">
+            <summary>
+            The config element for workbook &lt;B&gt;Workbook&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigWorksheetSectionNameKey">
+            <summary>
+            The config element for worksheet &lt;B&gt;Worksheet&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigHeadSectionNameKey">
+            <summary>
+            The config element for head &lt;B&gt;Head&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigBodySectionNameKey">
+            <summary>
+            The config element for body &lt;B&gt;Body&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigTailSectionNameKey">
+            <summary>
+            The config element for tail &lt;B&gt;Tail&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigTemplateSectionNameKey">
+            <summary>
+            The config element for template &lt;B&gt;Template&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigRowSectionNamekey">
+            <summary>
+            The config element for row &lt;B&gt;Row&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigColumnSectionNameKey">
+            <summary>
+            The config element for column &lt;B&gt;Column&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigCellSectionNameKey">
+            <summary>
+            The config element for cell &lt;B&gt;Cell&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyNameKey">
+            <summary>
+            The config property for &lt;B&gt;Name&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyBuilderKey">
+            <summary>
+            The config property for &lt;B&gt;Builder&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyStyleNameKey">
+            <summary>
+            The config property for &lt;B&gt;StyleName&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyWidthKey">
+            <summary>
+            The config property for &lt;B&gt;Width&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyHeightKey">
+            <summary>
+            The config property for &lt;B&gt;Height&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyValueKey">
+            <summary>
+            The config property for &lt;B&gt;Value&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyBindingKey">
+            <summary>
+            The config property for &lt;B&gt;Binding&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyFormatKey">
+            <summary>
+            The config property for &lt;B&gt;Format&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyRowSpanKey">
+            <summary>
+            The config property for &lt;B&gt;RowSpan&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyColSpanKey">
+            <summary>
+            The config property for &lt;B&gt;ColSpan&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyParamKey">
+            <summary>
+            The config property for &lt;B&gt;Param&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyTypeKey">
+            <summary>
+            The config property for &lt;B&gt;Type&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyMarginLeftKey">
+            <summary>
+            The config property for &lt;B&gt;MarginLeft&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyMarginTopKey">
+            <summary>
+            The config property for &lt;B&gt;MarginTop&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyDataSourceKey">
+            <summary>
+            The config property for &lt;B&gt;DataSource&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyFrozenCellKey">
+            <summary>
+            The config property for &lt;B&gt;FrozenCell&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyGroupKey">
+            <summary>
+            The config property for &lt;B&gt;Group&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyHiddenKey">
+            <summary>
+            The config property for &lt;B&gt;Hidden&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyFileKey">
+            <summary>
+            The config property for &lt;B&gt;File&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigSummaryRowBelowKey">
+            <summary>
+            The config property for &lt;B&gt;SummaryRowBelow&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsGridLinesVisibleKey">
+            <summary>
+            The config property for &lt;B&gt;IsGridLinesVisible&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigIsOverrideExistsKey">
+            <summary>
+            The config property for &lt;B&gt;IsOverrideExists&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyPropertyNameKey">
+            <summary>
+            The config property for &lt;B&gt;PropertyName&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigDataContainerSectionNameKey">
+            <summary>
+            The config property for &lt;B&gt;DataContainer&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigDataSourceSectionNameKey">
+            <summary>
+            The config property for &lt;B&gt;DataSource&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigDataItemSectionNameKey">
+            <summary>
+            The config property for &lt;B&gt;DataItem&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyRepeatCountKey">
+            <summary>
+            The config property for &lt;B&gt;RepeatCount&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyRuleNameKey">
+            <summary>
+            The config property for &lt;B&gt;RuleName&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertySheetNameKey">
+            <summary>
+            The config property for &lt;B&gt;SheetName&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyConstructorNameKey">
+            <summary>
+            The config property for &lt;B&gt;Constructor&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigDataConstructorSectionNameKey">
+            <summary>
+            The config property for &lt;B&gt;DataConstructor&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyIgnoreKey">
+            <summary>
+            The config property for &lt;B&gt;Ignore&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="F:Pfizer.Component.Common.Excel.Util.ExcelConstants.ConfigPropertyMaxRowCountKey">
+            <summary>
+            The config property for &lt;B&gt;MaxRowCount&lt;/ B&gt;
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorkbookConfigLoadedEventHandler">
+            <summary>
+            This delegate used for excel workbook config loaded event
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetBuiltEventArgs">
+            <summary>
+            This class used for excel worksheet built event
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Event.WorksheetBuiltEventArgs.#ctor(Pfizer.Component.Common.Excel.Context)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetBuiltEventArgs.Context">
+            <summary>
+            Set or get current context
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.DataTableConstructor">
+            <summary>
+            This class used for construct data set object from excel
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.DataTableConstructor.ConstructData(Aspose.Cells.Workbook,Pfizer.Component.Common.Excel.Context)">
+            <summary>
+            Construct data set from excel
+            </summary>
+            <param name="workbook"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.ExcelConfigurationSectionHandler">
+            <summary>
+            This class represents the configuration section handler for Excel
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.ExcelConfigurationSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Overrided
+            </summary>
+            <param name="parent"></param>
+            <param name="configContext"></param>
+            <param name="section"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.StyleManager">
+            <summary>
+            This class used for managing all excel styles defined in configuration file
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetCellBuiltEventArgs">
+            <summary>
+            This delegate used for excel cell built event
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Event.WorksheetCellBuiltEventArgs.#ctor(System.Object,Pfizer.Component.Common.Excel.Config.CellConfig,Pfizer.Component.Common.Excel.Context)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="value"></param>
+            <param name="cellConfig"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetCellBuiltEventArgs.CellConfig">
+            <summary>
+            Set or get cell config
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetCellBuiltEventArgs.Value">
+            <summary>
+            Set or get cell value
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Event.WorksheetCellBuiltEventArgs.Context">
+            <summary>
+            Set or get current context
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.ImportResult">
+            <summary>
+            This class represent the result for importing
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.ImportResult.DataContainer">
+            <summary>
+            Set or get data container
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.ImportResult.RuleCheckErrorList">
+            <summary>
+            Set or get rule check error list
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.ExcelWorksheetBuilder">
+            <summary>
+            Worksheet builder for excel based on Aspose.Cells control
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.ExcelWorksheetBuilder.BuildHead">
+            <summary>
+            Build excel header according to config
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.ExcelWorksheetBuilder.BuildBody">
+            <summary>
+            Build excel body according to config
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.ExcelWorksheetBuilder.BuildTail">
+            <summary>
+            Build excel tailer according to config
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.ExcelWorksheetBuilder.filterValue(System.Object,System.String)">
+            <summary>
+            Filter value, change precision
+            </summary>
+            <param name="value"></param>
+            <param name="custom"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.RowConfig">
+            <summary>
+            This class represents the Row config element
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.RowConfig.StyleName">
+            <summary>
+            Set or get style name of current row
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.RowConfig.Height">
+            <summary>
+            Set or get height of current row
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.DataItemConfig">
+            <summary>
+            This class represents the DataItem config element
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.DataItemConfig.CanAdd(Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Overrided
+            </summary>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.DataItemConfig.FromXml(System.Xml.XmlNode)">
+            <summary>
+            Overrided
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataItemConfig.Ignore">
+            <summary>
+            Set or get whether ignore current column
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataItemConfig.PropertyName">
+            <summary>
+            Set or get property name of current column in data object
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataItemConfig.TypeName">
+            <summary>
+            Set or get type name of current column in data object
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.DataItemConfig.RepeatCount">
+            <summary>
+            Set or get similar column repeat count
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Pfizer.Component.Common.Excel.Config.DataItemConfig.RuleName" -->
+        <member name="T:Pfizer.Component.Common.Excel.Config.TemplateConfig">
+            <summary>
+            This class represents the Template config element
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.TemplateConfig.DataSource">
+            <summary>
+            Set or get data source of current template, note: the root template get DataTable from DataSet, 
+            the nested template get DataTable from column of DataTable
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.TemplateConfig.Group">
+            <summary>
+            Set or get whether group current template
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.TemplateConfig.Hidden">
+            <summary>
+            Set or get whether hide current template when group
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.TypeRule">
+            <summary>
+            This class represents the Type Rule check
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.TypeRule.Check(System.Object,Pfizer.Component.Common.Excel.Config.DataItemConfig)">
+            <summary>
+            Check whether current excel cell can be converted as configured type
+            </summary>
+            <param name="value">Excel current cell value</param>
+            <param name="dataItemConfig">DataItemConfig configured in configuration file</param>
+            <returns>Follow current rule then True else False</returns>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Controller">
+            <summary>
+            Excel export and import controller
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Pfizer.Component.Common.Excel.Controller.CreateWorkbook(System.Object,System.String,System.IO.Stream)" -->
+        <member name="M:Pfizer.Component.Common.Excel.Controller.CreateWorkbook(System.Object,System.String)">
+            <summary>
+            Create a new workbook according the datasource and configuration 
+            </summary>
+            <example>
+            Controller excelController = new Controller();&lt;br /&gt;
+            Workbook workbook = excelController.CreateWorkbook(ds, "PLPhasing");&lt;br /&gt;
+            workbook.Save("PLPhasing.xls", FileFormatType.Default, SaveType.OpenInExcel, Response);
+            </example>
+            <param name="dataSource"></param>
+            <param name="workbookName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Controller.ImportExcel(System.IO.Stream,System.String)">
+            <summary>
+            Import excel as requested data type according to configuration
+            </summary>
+            <example>
+            Controller controller = new Controller();
+            ImportResult result = controller.ImportExcel(fuUpload.FileContent, "Test");
+            
+            lblResult.Visible = true;
+            grdResult.DataSource = result.DataContainer;
+            grdResult.DataBind();
+            
+            lblRuleCheckResult.Visible = true;
+            grdRule.DataSource = result.RuleCheckErrorList;
+            grdRule.DataBind();
+            </example>
+            <param name="excelFile"></param>
+            <param name="containerName"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Pfizer.Component.Common.Excel.Controller.WorkbookConfigLoaded">
+            <summary>
+            Workbook config loaded, used for Export and Import
+            </summary>
+        </member>
+        <member name="E:Pfizer.Component.Common.Excel.Controller.BuildWorksheet">
+            <summary>
+            Build work sheet event handler, used for Export
+            </summary>
+        </member>
+        <member name="E:Pfizer.Component.Common.Excel.Controller.WorksheetBuilt">
+            <summary>
+            Work sheet built, used for Export
+            </summary>
+        </member>
+        <member name="E:Pfizer.Component.Common.Excel.Controller.WorksheetRowBuilt">
+            <summary>
+            Worksheet row built, used for Export
+            </summary>
+        </member>
+        <member name="E:Pfizer.Component.Common.Excel.Controller.WorksheetCellBuilt">
+            <summary>
+            Worksheet cell built, used for Export
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Controller.Context">
+            <summary>
+            Context information for excel operation
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.HeadConfig">
+            <summary>
+            This class represents the Head config element
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.HeadConfig.StyleName">
+            <summary>
+            Set or get style name
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.HeadConfig.MarginLeft">
+            <summary>
+            Set or get margin left
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.HeadConfig.MarginTop">
+            <summary>
+            Set or get margin top
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.BodyConfig">
+            <summary>
+            This class represents the Body config element
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.BodyConfig.CanAdd(Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Check if configItem can be added to the ConfigItems
+            </summary>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.BodyConfig.FromXml(System.Xml.XmlNode)">
+            <summary>
+            Fill properties with given node
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.BodyConfig.StyleName">
+            <summary>
+            Set or get the style name
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.BodyConfig.MarginLeft">
+            <summary>
+            Set or get margin left
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.BodyConfig.MarginTop">
+            <summary>
+            Set or get margin top
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Config.CellConfig">
+            <summary>
+            This class represents the Cell config element
+            </summary>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.CellConfig.CanAdd(Pfizer.Component.Common.Excel.Config.ConfigItem)">
+            <summary>
+            Check if configItem can be added to the ConfigItems
+            </summary>
+            <param name="configItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Pfizer.Component.Common.Excel.Config.CellConfig.FromXml(System.Xml.XmlNode)">
+            <summary>
+            Fill properties with given node
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.Value">
+            <summary>
+            Set or get cell value
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.Binding">
+            <summary>
+            Set or get binding property name of data source
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.Param">
+            <summary>
+            Set or get params
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.StyleName">
+            <summary>
+            Set or get the style name
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.Height">
+            <summary>
+            Set or get the height
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.Width">
+            <summary>
+            Set or get the width
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.RowSpan">
+            <summary>
+            Set or get the row span
+            </summary>
+        </member>
+        <member name="P:Pfizer.Component.Common.Excel.Config.CellConfig.ColSpan">
+            <summary>
+            Set or get the column span
+            </summary>
+        </member>
+        <member name="T:Pfizer.Component.Common.Excel.Event.WorksheetBuiltEventHandler">
+            <summary>
+            This delegate used for excel worksheet built event
+            </summary>
+            <param name="sender"></param>
+            <param name="worksheetArgs"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,47 @@
+﻿@using ModelResources = LongHu.Framework.Resources.OrgChartResources
+@using GlobalResources = Resources.Global
+@model IEnumerable<LongHu.ObjectModel.OrgChart>
+
+
+<div class="gridViewOverflow">
+<table class="grid" cellpadding="0" cellspacing="0">
+    <tr class="header"  align="left">
+       
+
+                  <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="Name">@ModelResources.LabelName</th>
+       
+
+                  <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="ParentId">@ModelResources.LabelParentId</th>
+       
+
+                  <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="Path">@ModelResources.LabelPath</th>
+       
+
+                  <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="CreatedOn">@ModelResources.LabelCreatedOn</th>
+       
+
+                  <th  align="left" scope="col" class="grid_header_th" mth="Sort" IsAsc="@ViewBag.IsAsc.ToString()" SortBy="ModifiedOn">@ModelResources.LabelModifiedOn</th>
+        <th>@GlobalResources.LabelAction</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="row" valign="top" id="row-@item.Id">
+                  <td>@Html.DisplayFor(modelItem => item.Name)&nbsp;</td>
+                  <td>@Html.DisplayFor(modelItem => item.ParentId)&nbsp;</td>
+                  <td>@Html.DisplayFor(modelItem => item.Path)&nbsp;</td>
+                  <td>@Html.DisplayFor(modelItem => item.CreatedOn)&nbsp;</td>
+                  <td>@Html.DisplayFor(modelItem => item.ModifiedOn)&nbsp;</td>
+        <td class="command">
+            @Html.ActionLink(GlobalResources.ListActionEdit, "Edit", new { id=item.Id }) |
+            @Html.ActionLink(GlobalResources.ListActionDetails, "Details", new { id=item.Id }) |
+        
+			<a href="#" class="deleteLink" data-id="@item.Id" data-delConfirmMessage="@ModelResources.DeleteConfirmMessage">@GlobalResources.ListActionDelete</a>
+        </td>
+
+    </tr>
+}
+
+</table>
+</div>
+<div id="Page">@Html.Partial("_Page", Model as IPagedList)</div>
+

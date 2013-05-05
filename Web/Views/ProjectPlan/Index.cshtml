@@ -1,0 +1,326 @@
+﻿@using ModelResources = LongHu.Framework.Resources.ProjectPlanResources
+@using GlobalResources = Resources.Global
+@model LongHu.ObjectModel.ProjectPlan
+@{
+    ViewBag.Title = ModelResources.ListPageTitle;
+    var i = 1;
+}
+<h2>
+    招标规划管理 -> 项目招标规划编制</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                <div id="selectRegion">
+                    <div>
+                        <input type="text" />
+                        <span>
+                            <label>
+                                项目：</label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" />
+                        <span>
+                            <label>
+                                组织机构：</label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="checkbox" />
+                        <span>
+                            <label>
+                                是否年度规划：</label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" />
+                        <span>
+                            <label>
+                                编制日期：</label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" />
+                        <span>
+                            <label>
+                                编制人：</label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" />
+                        <span>
+                            <label>
+                                项目招标规划编号：</label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" />
+                        <span>
+                            <label>
+                                版本名称：</label>
+                        </span>
+                    </div>
+                    <div>
+                        <input type="text" />
+                        <span>
+                            <label>
+                                状态：</label>
+                        </span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>
+                    项目招标规划行</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <div>
+                                <span>
+                                    <label>
+                                        合同名称：</label></span>
+                                        @Html.DropDownList("ContractId", string.Empty)
+                                </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>
+                                    <label>
+                                        招标方式：</label></span>
+                                @Html.DropDownList("BidTypeId", string.Empty)
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>
+                                    <label>
+                                        年度区间：</label></span>
+                                @Html.DropDownList("Years", string.Empty)
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div>
+                    <input type="button" name="Select" value="筛选" />
+                    <input type="button" name="Save" value="保存" />
+                    <input type="button" name="Reject" value="放弃" />
+                    <input type="button" name="Submit" value="提交审批" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 900px; overflow-x: auto; overflow-y: auto;" cellpadding="0"
+                    cellspacing="0" border="1px">
+                    <thead>
+                        <tr class="header" align="center" valign="middle">
+                            <th rowspan="2">
+                                行号
+                            </th>
+                            <th rowspan="2">
+                                年度
+                            </th>
+                            <th colspan="4">
+                                合同信息
+                            </th>
+                            <th rowspan="2">
+                                招标方式
+                            </th>
+                            <th rowspan="2">
+                                已有协议号
+                            </th>
+                            <th colspan="5">
+                                责任人
+                            </th>
+                            <th colspan="5">
+                                规划量
+                            </th>
+                            <th colspan="9">
+                                招标计划时间
+                            </th>
+                            <th rowspan="2">
+                                备注
+                            </th>
+                            <th rowspan="2">
+                                删除
+                            </th>
+                        </tr>
+                        <tr class="header" align="center" valign="middle">
+                            <th>
+                                合同名称
+                            </th>
+                            <th>
+                                合约类别
+                            </th>
+                            <th>
+                                合同类别
+                            </th>
+                            <th>
+                                合同关系
+                            </th>
+                            <th>
+                                职能部门
+                            </th>
+                            <th>
+                                组织者
+                            </th>
+                            <th>
+                                研发责任人
+                            </th>
+                            <th>
+                                工程责任人
+                            </th>
+                            <th>
+                                造价责任人
+                            </th>
+                            <th>
+                                单位
+                            </th>
+                            <th>
+                                数量
+                            </th>
+                            <th>
+                                单价
+                            </th>
+                            <th>
+                                预估金额
+                            </th>
+                            <th>
+                                品质要求
+                            </th>
+                            <th>
+                                投标单位考察时间
+                            </th>
+                            <th>
+                                提供图纸/规范时间
+                            </th>
+                            <th>
+                                合同需求时间
+                            </th>
+                            <th>
+                                招标启动时间
+                            </th>
+                            <th>
+                                发标时间
+                            </th>
+                            <th>
+                                回标时间
+                            </th>
+                            <th>
+                                评定标时间
+                            </th>
+                            <th>
+                                签订合同文件时间
+                            </th>
+                            <th>
+                                进场需求时间(最早)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ProjectPlanCollectionList)
+                        {
+                            <tr class="row">
+                                <td>
+                                    <label for="lineNo">@i</label>
+                                </td>
+                                <td>
+                                    @item.Year
+                                </td>
+                                <td>
+                                    @Html.DropDownList("ContractId", (SelectList)(ViewBag.ContractId), item.ContractId.HasValue ? item.ContractId.Value.ToString() : null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("ContractCategoryId", (SelectList)(ViewBag.ContractCategoryId), null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("ContractTypeId", (SelectList)(ViewBag.ContractTypeId), null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("ContractRelationId", (SelectList)(ViewBag.ContractRelationId), null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("BidTypeId", (SelectList)(ViewBag.BidTypeId), null, null)
+                                </td>
+                                <td>
+                                    <label for="">@item.AgreementNumber</label>
+                                </td>
+                                <td>
+                                    @Html.DropDownList("DepartmentId", (SelectList)(ViewBag.DepartmentId), item.ContractId.HasValue ? item.ContractId.Value.ToString() : null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("OrganizerEmployeeId", (SelectList)(ViewBag.EmployeeId), item.OrganizerEmployeeId.HasValue ? item.OrganizerEmployeeId.Value.ToString() : null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("ResearchOwnerEmployeeId", (SelectList)(ViewBag.EmployeeId), item.ResearchOwnerEmployeeId.HasValue ? item.ResearchOwnerEmployeeId.Value.ToString() : null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("EngeerEmployeeId", (SelectList)(ViewBag.EmployeeId), item.EngeerEmployeeId.HasValue ? item.EngeerEmployeeId.Value.ToString() : null, null)
+                                </td>
+                                <td>
+                                    @Html.DropDownList("CostOwnerEmployeeId", (SelectList)(ViewBag.EmployeeId), item.CostOwnerEmployeeId.HasValue ? item.CostOwnerEmployeeId.Value.ToString() : null, null)
+                                </td>
+                                <td>
+                                    <label for="Unit">@item.Unit</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="Number" value="@item.Number" />
+                                </td>
+                                <td>
+                                    <input type="text" name="UnitPrice" value="@item.UnitPrice" />
+                                </td>
+                                <td>
+                                    <label for="EstimateValue">@item.EstimateValue</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="QualityRequirement" value="@item.QualityRequirement" />
+                                </td>
+                                <td>
+                                    <input type="text" name="BidCheckTime" value="@item.BidCheckTime" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="DrawingProvidedTime" value="@item.DrawingProvidedTime" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" value="" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" value="" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" value="" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" value="" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" value="" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" value="" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" value="" mth="Date" />
+                                </td>
+                                <td>
+                                    <input type="text" name="" />
+                                </td>
+                                <td>
+                                    <input type="button" name="" value="删除" />
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+<script language="javascript" type="text/javascript">
+
+</script>

@@ -1,0 +1,22 @@
+﻿@model SiteMapNodeModel
+@if (Model.IsCurrentNode && Model.SourceMetadata["HtmlHelper"].ToString() != "MvcSiteMapProvider.Web.Html.MenuHelper")
+{ 
+    <text>@Model.Title</text>
+    
+}
+else if (Model.IsClickable)
+{
+    if (Model.Children.Any())
+    {
+    <a class="popout level1 static" href="@Model.Url ">@Model.Title</a>
+    
+    }
+    else
+    {
+    <a class="level1 selected static" href="@Model.Url ">@Model.Title</a>
+    }
+}
+else
+{ 
+    <text>@Model.Title</text>
+}

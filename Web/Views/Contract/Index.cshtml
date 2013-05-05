@@ -1,0 +1,49 @@
+﻿@using ModelResources = LongHu.Framework.Resources.ContractResources
+@using GlobalResources = Resources.Global
+@model IEnumerable<LongHu.ObjectModel.Contract>
+
+@{
+    ViewBag.Title = ModelResources.ListPageTitle;
+
+}
+
+<h2>@ModelResources.ListPageTitle</h2>
+
+@using (Html.BeginForm())
+{
+    
+    
+    <div id="selectRegion">
+       
+       
+            				   <div>
+				   @Html.DropDownList("ContractTypeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelContractTypeId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("AgreementTypeId",string.Empty)
+				    <span>
+                       @ModelResources.LabelAgreementTypeId </span>
+                  </div>
+								   <div>
+				   @Html.DropDownList("ContractRelationId",string.Empty)
+				    <span>
+                       @ModelResources.LabelContractRelationId </span>
+                  </div>
+				           
+       
+        <div style="float: right">
+           
+            <input type="submit" mth="@LongHu.Framework.ConstantManager.DisableDuplicateSubmitForm" value="@GlobalResources.LabelSearch" class="searchSumit" />
+        </div>
+    </div>
+	<div style="margin: 0px 0px 5px 0px">
+	    @Html.ActionLink(GlobalResources.ListActionCreate, "Create")
+	</div>
+	}
+ <div id="tbListView">
+    @Html.Partial("SearchListPartialView",Model as IPagedList)
+    </div>
+
+

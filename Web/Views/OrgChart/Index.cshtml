@@ -1,0 +1,34 @@
+﻿@using ModelResources = LongHu.Framework.Resources.OrgChartResources
+@using GlobalResources = Resources.Global
+@model IEnumerable<LongHu.ObjectModel.OrgChart>
+
+@{
+    ViewBag.Title = ModelResources.ListPageTitle;
+
+}
+
+<h2>@ModelResources.ListPageTitle</h2>
+
+@using (Html.BeginForm())
+{
+    
+    
+    <div id="selectRegion">
+       
+       
+                       
+       
+        <div style="float: right">
+           
+            <input type="submit" mth="@LongHu.Framework.ConstantManager.DisableDuplicateSubmitForm" value="@GlobalResources.LabelSearch" class="searchSumit" />
+        </div>
+    </div>
+	<div style="margin: 0px 0px 5px 0px">
+	    @Html.ActionLink(GlobalResources.ListActionCreate, "Create")
+	</div>
+	}
+ <div id="tbListView">
+    @Html.Partial("SearchListPartialView",Model as IPagedList)
+    </div>
+
+

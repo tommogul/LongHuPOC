@@ -1,0 +1,2191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LongHu.DataAccess.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+        <EntityContainer Name="LongHuDataAccessStoreContainer">
+            <EntitySet Name="OrgChart" EntityType="LongHu.DataAccess.Store.OrgChart" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="Contract" EntityType="LongHu.DataAccess.Store.Contract" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="DataDictionary" EntityType="LongHu.DataAccess.Store.DataDictionary" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="Department" EntityType="LongHu.DataAccess.Store.Department" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="Employee" EntityType="LongHu.DataAccess.Store.Employee" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="ProjectPlan" EntityType="LongHu.DataAccess.Store.ProjectPlan" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="ProjectPlanCollection" EntityType="LongHu.DataAccess.Store.ProjectPlanCollection" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="ProjectStructure" EntityType="LongHu.DataAccess.Store.ProjectStructure" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="DistrictPlan" EntityType="LongHu.DataAccess.Store.DistrictPlan" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="DistrictPlanCollection" EntityType="LongHu.DataAccess.Store.DistrictPlanCollection" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="DistrictPlanDetails" EntityType="LongHu.DataAccess.Store.DistrictPlanDetails" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="GroupPlan" EntityType="LongHu.DataAccess.Store.GroupPlan" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="GroupPlanCollection" EntityType="LongHu.DataAccess.Store.GroupPlanCollection" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="GroupPlanDetail" EntityType="LongHu.DataAccess.Store.GroupPlanDetail" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="DistrictProjectRelation" EntityType="LongHu.DataAccess.Store.DistrictProjectRelation" store:Type="Tables" Schema="LONGUSER" />
+            <EntitySet Name="GroupDistrictRelation" EntityType="LongHu.DataAccess.Store.GroupDistrictRelation" store:Type="Tables" Schema="LONGUSER" />
+            <AssociationSet Name="R_DEPARTMENTS_EMPLOYEE" Association="LongHu.DataAccess.Store.R_DEPARTMENTS_EMPLOYEE">
+                <End Role="DEPARTMENT" EntitySet="Department" />
+                <End Role="EMPLOYEE" EntitySet="Employee" />
+            </AssociationSet>
+            <AssociationSet Name="OrgChartDepartment" Association="LongHu.DataAccess.Store.OrgChartDepartment">
+                <End Role="OrgChart" EntitySet="OrgChart" />
+                <End Role="Department" EntitySet="Department" />
+            </AssociationSet>
+            <AssociationSet Name="OrgChartProjectStructure" Association="LongHu.DataAccess.Store.OrgChartProjectStructure">
+                <End Role="OrgChart" EntitySet="OrgChart" />
+                <End Role="ProjectStructure" EntitySet="ProjectStructure" />
+            </AssociationSet>
+            <AssociationSet Name="ProjectStructureProjectPlan" Association="LongHu.DataAccess.Store.ProjectStructureProjectPlan">
+                <End Role="ProjectStructure" EntitySet="ProjectStructure" />
+                <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+            </AssociationSet>
+            <AssociationSet Name="OrgChartProjectPlan" Association="LongHu.DataAccess.Store.OrgChartProjectPlan">
+                <End Role="OrgChart" EntitySet="OrgChart" />
+                <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+            </AssociationSet>
+            <AssociationSet Name="ProjectPlanProjectPlanCollection" Association="LongHu.DataAccess.Store.ProjectPlanProjectPlanCollection">
+                <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="DepartmentProjectPlanCollection" Association="LongHu.DataAccess.Store.DepartmentProjectPlanCollection">
+                <End Role="Department" EntitySet="Department" />
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="ContractProjectPlanCollection" Association="LongHu.DataAccess.Store.ContractProjectPlanCollection">
+                <End Role="Contract" EntitySet="Contract" />
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="EmployeeProjectPlanCollection" Association="LongHu.DataAccess.Store.EmployeeProjectPlanCollection">
+                <End Role="Employee" EntitySet="Employee" />
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="EmployeeProjectPlanCollection1" Association="LongHu.DataAccess.Store.EmployeeProjectPlanCollection1">
+                <End Role="Employee" EntitySet="Employee" />
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="EmployeeProjectPlanCollection2" Association="LongHu.DataAccess.Store.EmployeeProjectPlanCollection2">
+                <End Role="Employee" EntitySet="Employee" />
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="EmployeeProjectPlanCollection3" Association="LongHu.DataAccess.Store.EmployeeProjectPlanCollection3">
+                <End Role="Employee" EntitySet="Employee" />
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="OrgChartDistricPlan" Association="LongHu.DataAccess.Store.OrgChartDistricPlan">
+                <End Role="OrgChart" EntitySet="OrgChart" />
+                <End Role="DistricPlan" EntitySet="DistrictPlan" />
+            </AssociationSet>
+            <AssociationSet Name="EmployeeProjectPlan" Association="LongHu.DataAccess.Store.EmployeeProjectPlan">
+                <End Role="Employee" EntitySet="Employee" />
+                <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+            </AssociationSet>
+            <AssociationSet Name="EmployeeDistricPlan" Association="LongHu.DataAccess.Store.EmployeeDistricPlan">
+                <End Role="Employee" EntitySet="Employee" />
+                <End Role="DistricPlan" EntitySet="DistrictPlan" />
+            </AssociationSet>
+            <AssociationSet Name="DistricPlanDistrictPlanCollection" Association="LongHu.DataAccess.Store.DistricPlanDistrictPlanCollection">
+                <End Role="DistricPlan" EntitySet="DistrictPlan" />
+                <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="ContractDistrictPlanCollection" Association="LongHu.DataAccess.Store.ContractDistrictPlanCollection">
+                <End Role="Contract" EntitySet="Contract" />
+                <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="DistrictPlanCollectionDistrictPlanDetails" Association="LongHu.DataAccess.Store.DistrictPlanCollectionDistrictPlanDetails">
+                <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+                <End Role="DistrictPlanDetails" EntitySet="DistrictPlanDetails" />
+            </AssociationSet>
+            <AssociationSet Name="ProjectPlanCollectionDistrictPlanDetails" Association="LongHu.DataAccess.Store.ProjectPlanCollectionDistrictPlanDetails">
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+                <End Role="DistrictPlanDetails" EntitySet="DistrictPlanDetails" />
+            </AssociationSet>
+            <AssociationSet Name="OrgChartGroupPlan" Association="LongHu.DataAccess.Store.OrgChartGroupPlan">
+                <End Role="OrgChart" EntitySet="OrgChart" />
+                <End Role="GroupPlan" EntitySet="GroupPlan" />
+            </AssociationSet>
+            <AssociationSet Name="EmployeeGroupPlan" Association="LongHu.DataAccess.Store.EmployeeGroupPlan">
+                <End Role="Employee" EntitySet="Employee" />
+                <End Role="GroupPlan" EntitySet="GroupPlan" />
+            </AssociationSet>
+            <AssociationSet Name="GroupPlanGroupPlanCollection" Association="LongHu.DataAccess.Store.GroupPlanGroupPlanCollection">
+                <End Role="GroupPlan" EntitySet="GroupPlan" />
+                <End Role="GroupPlanCollection" EntitySet="GroupPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="ContractGroupPlanCollection" Association="LongHu.DataAccess.Store.ContractGroupPlanCollection">
+                <End Role="Contract" EntitySet="Contract" />
+                <End Role="GroupPlanCollection" EntitySet="GroupPlanCollection" />
+            </AssociationSet>
+            <AssociationSet Name="GroupPlanCollectionGroupPlanDetail" Association="LongHu.DataAccess.Store.GroupPlanCollectionGroupPlanDetail">
+                <End Role="GroupPlanCollection" EntitySet="GroupPlanCollection" />
+                <End Role="GroupPlanDetail" EntitySet="GroupPlanDetail" />
+            </AssociationSet>
+            <AssociationSet Name="DistrictPlanCollectionGroupPlanDetail" Association="LongHu.DataAccess.Store.DistrictPlanCollectionGroupPlanDetail">
+                <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+                <End Role="GroupPlanDetail" EntitySet="GroupPlanDetail" />
+            </AssociationSet>
+            <AssociationSet Name="ProjectPlanCollectionDistrictProjectRelation" Association="LongHu.DataAccess.Store.ProjectPlanCollectionDistrictProjectRelation">
+                <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+                <End Role="DistrictProjectRelation" EntitySet="DistrictProjectRelation" />
+            </AssociationSet>
+            <AssociationSet Name="GroupPlanGroupDistrictRelation" Association="LongHu.DataAccess.Store.GroupPlanGroupDistrictRelation">
+                <End Role="GroupPlan" EntitySet="GroupPlan" />
+                <End Role="GroupDistrictRelation" EntitySet="GroupDistrictRelation" />
+            </AssociationSet>
+            <AssociationSet Name="DistrictPlanCollectionGroupDistrictRelation" Association="LongHu.DataAccess.Store.DistrictPlanCollectionGroupDistrictRelation">
+                <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+                <End Role="GroupDistrictRelation" EntitySet="GroupDistrictRelation" />
+            </AssociationSet>
+            <AssociationSet Name="DistricPlanDistrictProjectRelation" Association="LongHu.DataAccess.Store.DistricPlanDistrictProjectRelation">
+                <End Role="DistricPlan" EntitySet="DistrictPlan" />
+                <End Role="DistrictProjectRelation" EntitySet="DistrictProjectRelation" />
+            </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="OrgChart">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Name" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="ParentId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="Path" Type="nvarchar2" Nullable="false" MaxLength="100" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contract">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Name" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+            <Property Name="Unit" Type="nclob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DataDictionary">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Name" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="AttributeName" Type="nvarchar2" Nullable="false" MaxLength="100" />
+            <Property Name="Value" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="DisplayOrder" Type="number" Nullable="false" Precision="38" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Name" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+            <Property Name="OrgChartId" Type="number" Nullable="true" Precision="38" />
+        </EntityType>
+        <EntityType Name="Employee">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="UserName" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="Email" Type="nvarchar2" Nullable="true" MaxLength="300" />
+            <Property Name="ContactPhone1" Type="varchar2" Nullable="true" MaxLength="16" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="LoginName" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="PassWord" Type="nvarchar2" Nullable="false" MaxLength="100" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+            <Property Name="DepartmentId" Type="number" Nullable="true" Precision="38" />
+        </EntityType>
+        <EntityType Name="ProjectPlan">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ProjectName" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="BidPlanNumber" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="Description" Type="nclob" Nullable="true" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="VersionName" Type="nvarchar2" Nullable="true" MaxLength="100" />
+            <Property Name="Version" Type="number" Nullable="true" Precision="38" />
+            <Property Name="IsForYear" Type="number" Nullable="false" Precision="5" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+            <Property Name="OperatedOn" Type="date" Nullable="true" />
+            <Property Name="ProjectPlanStatusId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ProjectStructureId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="OrgChartId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="OperatedBEmployeeId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="ProjectPlanCollection">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Year" Type="char" Nullable="false" MaxLength="4" />
+            <Property Name="AgreementNumber" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="Unit" Type="nvarchar2" Nullable="false" MaxLength="100" />
+            <Property Name="UnitPrice" Type="number" Nullable="false" Precision="11" Scale="2" />
+            <Property Name="EstimateValue" Type="number" Nullable="false" Precision="11" Scale="2" />
+            <Property Name="QualityRequirement" Type="varchar2" Nullable="false" MaxLength="800" />
+            <Property Name="ReviewTime" Type="date" Nullable="true" />
+            <Property Name="DrawingProvidedTime" Type="date" Nullable="true" />
+            <Property Name="ContractTime" Type="date" Nullable="true" />
+            <Property Name="BidStartedTime" Type="date" Nullable="true" />
+            <Property Name="BidSeningTime" Type="date" Nullable="true" />
+            <Property Name="BidReturnTime" Type="date" Nullable="true" />
+            <Property Name="BidCheckTime" Type="date" Nullable="true" />
+            <Property Name="ContractSignTime" Type="date" Nullable="true" />
+            <Property Name="ComingIntoTime" Type="date" Nullable="true" />
+            <Property Name="Comments" Type="nclob" Nullable="false" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="BidTypeId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+            <Property Name="ProjectPlanId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="DepartmentId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="ContractId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="OrganizerEmployeeId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="ResearchOwnerEmployeeId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="EngeerEmployeeId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="CostOwnerEmployeeId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="ContractCategoryId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ContractTypeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ContractRelationId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="ProjectStructure">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Name" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="PARENTID" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Path" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="IsProject" Type="number" Nullable="false" Precision="5" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="IsActive" Type="nclob" Nullable="false" />
+            <Property Name="OrgChartId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="DistrictPlan">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="DistricPlanNumber" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="Description" Type="nclob" Nullable="true" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="VersionName" Type="nvarchar2" Nullable="true" MaxLength="100" />
+            <Property Name="Version" Type="number" Nullable="true" Precision="38" />
+            <Property Name="IsActive" Type="number" Nullable="false" Precision="5" />
+            <Property Name="OperatedOn" Type="date" Nullable="true" />
+            <Property Name="DistricPlanStatusId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="OrgChartId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="OperatedBEmployeeId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="DistrictPlanCollection">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Year" Type="char" Nullable="false" MaxLength="4" />
+            <Property Name="AgreementNumber" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="Unit" Type="nvarchar2" Nullable="false" MaxLength="100" />
+            <Property Name="QualityRequirement" Type="varchar2" Nullable="false" MaxLength="800" />
+            <Property Name="ReviewTime" Type="date" Nullable="true" />
+            <Property Name="DrawingProvidedTime" Type="date" Nullable="true" />
+            <Property Name="ContractTime" Type="date" Nullable="true" />
+            <Property Name="BidStartedTime" Type="date" Nullable="true" />
+            <Property Name="BidSeningTime" Type="date" Nullable="true" />
+            <Property Name="BidReturnTime" Type="date" Nullable="true" />
+            <Property Name="BidCheckTime" Type="date" Nullable="true" />
+            <Property Name="ContractSignTime" Type="date" Nullable="true" />
+            <Property Name="ComingIntoTime" Type="date" Nullable="true" />
+            <Property Name="Comments" Type="nclob" Nullable="false" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="BidTypeId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="IsActive" Type="number" Nullable="false" Precision="5" />
+            <Property Name="ContractCategoryId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="BidModeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="DistricPlanId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ContractId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsVoilate" Type="number" Nullable="false" Precision="5" />
+            <Property Name="Reason" Type="nclob" Nullable="false" />
+            <Property Name="TotalNumber" Type="nclob" Nullable="false" />
+            <Property Name="EstimatedTotalValue" Type="nclob" Nullable="false" />
+            <Property Name="SubmittionNmuber" Type="nclob" Nullable="false" />
+            <Property Name="SubmittionValue" Type="nclob" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DistrictPlanDetails">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsActive" Type="number" Nullable="false" Precision="5" />
+            <Property Name="DistrictPlanCollectionId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ProjectPlanCollectionId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="GroupPlan">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="GroupPlanNumber" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="Description" Type="nclob" Nullable="true" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="VersionName" Type="nvarchar2" Nullable="true" MaxLength="100" />
+            <Property Name="Version" Type="number" Nullable="true" Precision="38" />
+            <Property Name="IsActive" Type="number" Nullable="false" Precision="5" />
+            <Property Name="OperatedOn" Type="date" Nullable="true" />
+            <Property Name="GroupPlanStatusId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="OrgChartId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="OperatedEmployeeId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="GroupPlanCollection">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="Year" Type="char" Nullable="false" MaxLength="4" />
+            <Property Name="AgreementNumber" Type="nvarchar2" Nullable="false" MaxLength="200" />
+            <Property Name="Unit" Type="nvarchar2" Nullable="false" MaxLength="100" />
+            <Property Name="QualityRequirement" Type="varchar2" Nullable="false" MaxLength="800" />
+            <Property Name="ReviewTime" Type="date" Nullable="true" />
+            <Property Name="DrawingProvidedTime" Type="date" Nullable="true" />
+            <Property Name="ContractTime" Type="date" Nullable="true" />
+            <Property Name="BidStartedTime" Type="date" Nullable="true" />
+            <Property Name="BidSeningTime" Type="date" Nullable="true" />
+            <Property Name="BidReturnTime" Type="date" Nullable="true" />
+            <Property Name="BidCheckTime" Type="date" Nullable="true" />
+            <Property Name="ContractSignTime" Type="date" Nullable="true" />
+            <Property Name="ComingIntoTime" Type="date" Nullable="true" />
+            <Property Name="Comments" Type="nclob" Nullable="false" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="BidTypeId" Type="number" Nullable="true" Precision="38" />
+            <Property Name="IsActive" Type="number" Nullable="false" Precision="5" />
+            <Property Name="ContractCategoryId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="BidModeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsVoilate" Type="number" Nullable="false" Precision="5" />
+            <Property Name="Reason" Type="nclob" Nullable="false" />
+            <Property Name="TotalNumber" Type="nclob" Nullable="false" />
+            <Property Name="EstimatedTotalValue" Type="nclob" Nullable="false" />
+            <Property Name="SubmittionNmuber" Type="nclob" Nullable="false" />
+            <Property Name="SubmittionValue" Type="nclob" Nullable="false" />
+            <Property Name="GroupPlanId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ContractId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="GroupPlanDetail">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="CreatedOn" Type="date" Nullable="false" />
+            <Property Name="CreatedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedByEmployeeId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="IsActive" Type="number" Nullable="false" Precision="5" />
+            <Property Name="GroupPlanCollectionId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="DistrictPlanCollectionId" Type="number" Nullable="false" Precision="38" />
+        </EntityType>
+        <EntityType Name="DistrictProjectRelation">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="DistrictPlanId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="ProjectPlanCollectionId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="CreateOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupDistrictRelation">
+            <Key>
+                <PropertyRef Name="Id" />
+            </Key>
+            <Property Name="Id" Type="number" Nullable="false" Precision="38" />
+            <Property Name="GroupPlanId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="DistrictPlanCollectionId" Type="number" Nullable="false" Precision="38" />
+            <Property Name="CreateOn" Type="date" Nullable="false" />
+            <Property Name="ModifiedOn" Type="date" Nullable="false" />
+        </EntityType>
+    <Association Name="R_DEPARTMENTS_EMPLOYEE">
+        <End Role="DEPARTMENT" Type="LongHu.DataAccess.Store.Department" Multiplicity="0..1">
+        </End>
+        <End Role="EMPLOYEE" Type="LongHu.DataAccess.Store.Employee" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="DEPARTMENT">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EMPLOYEE">
+                <PropertyRef Name="DepartmentId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="OrgChartDepartment">
+        <End Role="OrgChart" Type="LongHu.DataAccess.Store.OrgChart" Multiplicity="0..1">
+        </End>
+        <End Role="Department" Type="LongHu.DataAccess.Store.Department" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="OrgChart">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department">
+                <PropertyRef Name="OrgChartId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="OrgChartProjectStructure">
+        <End Role="OrgChart" Type="LongHu.DataAccess.Store.OrgChart" Multiplicity="1">
+        </End>
+        <End Role="ProjectStructure" Type="LongHu.DataAccess.Store.ProjectStructure" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="OrgChart">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectStructure">
+                <PropertyRef Name="OrgChartId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="ProjectStructureProjectPlan">
+        <End Role="ProjectStructure" Type="LongHu.DataAccess.Store.ProjectStructure" Multiplicity="1">
+        </End>
+        <End Role="ProjectPlan" Type="LongHu.DataAccess.Store.ProjectPlan" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="ProjectStructure">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlan">
+                <PropertyRef Name="ProjectStructureId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="OrgChartProjectPlan">
+        <End Role="OrgChart" Type="LongHu.DataAccess.Store.OrgChart" Multiplicity="1">
+        </End>
+        <End Role="ProjectPlan" Type="LongHu.DataAccess.Store.ProjectPlan" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="OrgChart">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlan">
+                <PropertyRef Name="OrgChartId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="ProjectPlanProjectPlanCollection">
+        <End Role="ProjectPlan" Type="LongHu.DataAccess.Store.ProjectPlan" Multiplicity="1">
+        </End>
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="ProjectPlan">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+                <PropertyRef Name="ProjectPlanId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="DepartmentProjectPlanCollection">
+        <End Role="Department" Type="LongHu.DataAccess.Store.Department" Multiplicity="0..1">
+        </End>
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Department">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+                <PropertyRef Name="DepartmentId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="ContractProjectPlanCollection">
+        <End Role="Contract" Type="LongHu.DataAccess.Store.Contract" Multiplicity="1">
+        </End>
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Contract">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+                <PropertyRef Name="ContractId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="EmployeeProjectPlanCollection">
+        <End Role="Employee" Type="LongHu.DataAccess.Store.Employee" Multiplicity="0..1">
+        </End>
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Employee">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+                <PropertyRef Name="OrganizerEmployeeId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="EmployeeProjectPlanCollection1">
+        <End Role="Employee" Type="LongHu.DataAccess.Store.Employee" Multiplicity="0..1">
+        </End>
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Employee">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+                <PropertyRef Name="ResearchOwnerEmployeeId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="EmployeeProjectPlanCollection2">
+        <End Role="Employee" Type="LongHu.DataAccess.Store.Employee" Multiplicity="0..1">
+        </End>
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Employee">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+                <PropertyRef Name="EngeerEmployeeId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="EmployeeProjectPlanCollection3">
+        <End Role="Employee" Type="LongHu.DataAccess.Store.Employee" Multiplicity="0..1">
+        </End>
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Employee">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+                <PropertyRef Name="CostOwnerEmployeeId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="OrgChartDistricPlan">
+        <End Role="OrgChart" Type="LongHu.DataAccess.Store.OrgChart" Multiplicity="1">
+        </End>
+        <End Role="DistricPlan" Type="LongHu.DataAccess.Store.DistrictPlan" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="OrgChart">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistricPlan">
+                <PropertyRef Name="OrgChartId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="EmployeeProjectPlan">
+        <End Role="Employee" Type="LongHu.DataAccess.Store.Employee" Multiplicity="1">
+        </End>
+        <End Role="ProjectPlan" Type="LongHu.DataAccess.Store.ProjectPlan" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Employee">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlan">
+                <PropertyRef Name="OperatedBEmployeeId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="EmployeeDistricPlan">
+        <End Role="Employee" Type="LongHu.DataAccess.Store.Employee" Multiplicity="1">
+        </End>
+        <End Role="DistricPlan" Type="LongHu.DataAccess.Store.DistrictPlan" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Employee">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistricPlan">
+                <PropertyRef Name="OperatedBEmployeeId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="DistricPlanDistrictPlanCollection">
+        <End Role="DistricPlan" Type="LongHu.DataAccess.Store.DistrictPlan" Multiplicity="1">
+        </End>
+        <End Role="DistrictPlanCollection" Type="LongHu.DataAccess.Store.DistrictPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="DistricPlan">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanCollection">
+                <PropertyRef Name="DistricPlanId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="ContractDistrictPlanCollection">
+        <End Role="Contract" Type="LongHu.DataAccess.Store.Contract" Multiplicity="1">
+        </End>
+        <End Role="DistrictPlanCollection" Type="LongHu.DataAccess.Store.DistrictPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Contract">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanCollection">
+                <PropertyRef Name="ContractId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="DistrictPlanCollectionDistrictPlanDetails">
+        <End Role="DistrictPlanCollection" Type="LongHu.DataAccess.Store.DistrictPlanCollection" Multiplicity="1">
+        </End>
+        <End Role="DistrictPlanDetails" Type="LongHu.DataAccess.Store.DistrictPlanDetails" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="DistrictPlanCollection">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanDetails">
+                <PropertyRef Name="DistrictPlanCollectionId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="ProjectPlanCollectionDistrictPlanDetails">
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="1">
+        </End>
+        <End Role="DistrictPlanDetails" Type="LongHu.DataAccess.Store.DistrictPlanDetails" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="ProjectPlanCollection">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanDetails">
+                <PropertyRef Name="ProjectPlanCollectionId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="OrgChartGroupPlan">
+        <End Role="OrgChart" Type="LongHu.DataAccess.Store.OrgChart" Multiplicity="1">
+        </End>
+        <End Role="GroupPlan" Type="LongHu.DataAccess.Store.GroupPlan" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="OrgChart">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlan">
+                <PropertyRef Name="OrgChartId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="EmployeeGroupPlan">
+        <End Role="Employee" Type="LongHu.DataAccess.Store.Employee" Multiplicity="1">
+        </End>
+        <End Role="GroupPlan" Type="LongHu.DataAccess.Store.GroupPlan" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Employee">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlan">
+                <PropertyRef Name="OperatedEmployeeId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="GroupPlanGroupPlanCollection">
+        <End Role="GroupPlan" Type="LongHu.DataAccess.Store.GroupPlan" Multiplicity="1">
+        </End>
+        <End Role="GroupPlanCollection" Type="LongHu.DataAccess.Store.GroupPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="GroupPlan">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanCollection">
+                <PropertyRef Name="GroupPlanId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="ContractGroupPlanCollection">
+        <End Role="Contract" Type="LongHu.DataAccess.Store.Contract" Multiplicity="1">
+        </End>
+        <End Role="GroupPlanCollection" Type="LongHu.DataAccess.Store.GroupPlanCollection" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="Contract">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanCollection">
+                <PropertyRef Name="ContractId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="GroupPlanCollectionGroupPlanDetail">
+        <End Role="GroupPlanCollection" Type="LongHu.DataAccess.Store.GroupPlanCollection" Multiplicity="1">
+        </End>
+        <End Role="GroupPlanDetail" Type="LongHu.DataAccess.Store.GroupPlanDetail" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="GroupPlanCollection">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanDetail">
+                <PropertyRef Name="GroupPlanCollectionId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="DistrictPlanCollectionGroupPlanDetail">
+        <End Role="DistrictPlanCollection" Type="LongHu.DataAccess.Store.DistrictPlanCollection" Multiplicity="1">
+        </End>
+        <End Role="GroupPlanDetail" Type="LongHu.DataAccess.Store.GroupPlanDetail" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="DistrictPlanCollection">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanDetail">
+                <PropertyRef Name="DistrictPlanCollectionId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="ProjectPlanCollectionDistrictProjectRelation">
+        <End Role="ProjectPlanCollection" Type="LongHu.DataAccess.Store.ProjectPlanCollection" Multiplicity="1">
+        </End>
+        <End Role="DistrictProjectRelation" Type="LongHu.DataAccess.Store.DistrictProjectRelation" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="ProjectPlanCollection">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictProjectRelation">
+                <PropertyRef Name="ProjectPlanCollectionId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="GroupPlanGroupDistrictRelation">
+        <End Role="GroupPlan" Type="LongHu.DataAccess.Store.GroupPlan" Multiplicity="1">
+        </End>
+        <End Role="GroupDistrictRelation" Type="LongHu.DataAccess.Store.GroupDistrictRelation" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="GroupPlan">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupDistrictRelation">
+                <PropertyRef Name="GroupPlanId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="DistrictPlanCollectionGroupDistrictRelation">
+        <End Role="DistrictPlanCollection" Type="LongHu.DataAccess.Store.DistrictPlanCollection" Multiplicity="1">
+        </End>
+        <End Role="GroupDistrictRelation" Type="LongHu.DataAccess.Store.GroupDistrictRelation" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="DistrictPlanCollection">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupDistrictRelation">
+                <PropertyRef Name="DistrictPlanCollectionId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+    <Association Name="DistricPlanDistrictProjectRelation">
+        <End Role="DistricPlan" Type="LongHu.DataAccess.Store.DistrictPlan" Multiplicity="1">
+        </End>
+        <End Role="DistrictProjectRelation" Type="LongHu.DataAccess.Store.DistrictProjectRelation" Multiplicity="*">
+        </End>
+        <ReferentialConstraint>
+            <Principal Role="DistricPlan">
+                <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictProjectRelation">
+                <PropertyRef Name="DistrictPlanId" />
+            </Dependent>
+        </ReferentialConstraint>
+    </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LongHu.DataAccess" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LongHuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OrgChart" EntityType="LongHu.DataAccess.OrgChart" />
+          <EntitySet Name="Contract" EntityType="LongHu.DataAccess.Contract" />
+          <EntitySet Name="DataDictionary" EntityType="LongHu.DataAccess.DataDictionary" />
+          <EntitySet Name="Department" EntityType="LongHu.DataAccess.Department" />
+          <EntitySet Name="Employee" EntityType="LongHu.DataAccess.Employee" />
+          <EntitySet Name="ProjectPlan" EntityType="LongHu.DataAccess.ProjectPlan" />
+          <EntitySet Name="ProjectPlanCollection" EntityType="LongHu.DataAccess.ProjectPlanCollection" />
+          <EntitySet Name="ProjectStructure" EntityType="LongHu.DataAccess.ProjectStructure" />
+          <AssociationSet Name="R_DEPARTMENTS_EMPLOYEE" Association="LongHu.DataAccess.R_DEPARTMENTS_EMPLOYEE">
+            <End Role="DEPARTMENT" EntitySet="Department" />
+            <End Role="EMPLOYEE" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="OrgChartDepartment" Association="LongHu.DataAccess.OrgChartDepartment">
+            <End Role="OrgChart" EntitySet="OrgChart" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="OrgChartProjectStructure" Association="LongHu.DataAccess.OrgChartProjectStructure">
+            <End Role="OrgChart" EntitySet="OrgChart" />
+            <End Role="ProjectStructure" EntitySet="ProjectStructure" />
+          </AssociationSet>
+          <AssociationSet Name="ProjectStructureProjectPlan" Association="LongHu.DataAccess.ProjectStructureProjectPlan">
+            <End Role="ProjectStructure" EntitySet="ProjectStructure" />
+            <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+          </AssociationSet>
+          <AssociationSet Name="OrgChartProjectPlan" Association="LongHu.DataAccess.OrgChartProjectPlan">
+            <End Role="OrgChart" EntitySet="OrgChart" />
+            <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+          </AssociationSet>
+          <AssociationSet Name="ProjectPlanProjectPlanCollection" Association="LongHu.DataAccess.ProjectPlanProjectPlanCollection">
+            <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentProjectPlanCollection" Association="LongHu.DataAccess.DepartmentProjectPlanCollection">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="ContractProjectPlanCollection" Association="LongHu.DataAccess.ContractProjectPlanCollection">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeProjectPlanCollection" Association="LongHu.DataAccess.EmployeeProjectPlanCollection">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeProjectPlanCollection1" Association="LongHu.DataAccess.EmployeeProjectPlanCollection1">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeProjectPlanCollection2" Association="LongHu.DataAccess.EmployeeProjectPlanCollection2">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeProjectPlanCollection3" Association="LongHu.DataAccess.EmployeeProjectPlanCollection3">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+          </AssociationSet>
+          <EntitySet Name="DistrictPlan" EntityType="LongHu.DataAccess.DistrictPlan" />
+          <AssociationSet Name="OrgChartDistricPlan" Association="LongHu.DataAccess.OrgChartDistricPlan">
+            <End Role="OrgChart" EntitySet="OrgChart" />
+            <End Role="DistricPlan" EntitySet="DistrictPlan" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeProjectPlan" Association="LongHu.DataAccess.EmployeeProjectPlan">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ProjectPlan" EntitySet="ProjectPlan" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeDistricPlan" Association="LongHu.DataAccess.EmployeeDistricPlan">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="DistricPlan" EntitySet="DistrictPlan" />
+          </AssociationSet>
+          <EntitySet Name="DistrictPlanCollection" EntityType="LongHu.DataAccess.DistrictPlanCollection" />
+          <AssociationSet Name="DistricPlanDistrictPlanCollection" Association="LongHu.DataAccess.DistricPlanDistrictPlanCollection">
+            <End Role="DistricPlan" EntitySet="DistrictPlan" />
+            <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="ContractDistrictPlanCollection" Association="LongHu.DataAccess.ContractDistrictPlanCollection">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+          </AssociationSet>
+          <EntitySet Name="DistrictPlanDetails" EntityType="LongHu.DataAccess.DistrictPlanDetails" />
+          <AssociationSet Name="DistrictPlanCollectionDistrictPlanDetails" Association="LongHu.DataAccess.DistrictPlanCollectionDistrictPlanDetails">
+            <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+            <End Role="DistrictPlanDetails" EntitySet="DistrictPlanDetails" />
+          </AssociationSet>
+          <AssociationSet Name="ProjectPlanCollectionDistrictPlanDetails" Association="LongHu.DataAccess.ProjectPlanCollectionDistrictPlanDetails">
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            <End Role="DistrictPlanDetails" EntitySet="DistrictPlanDetails" />
+          </AssociationSet>
+          <EntitySet Name="GroupPlan" EntityType="LongHu.DataAccess.GroupPlan" />
+          <AssociationSet Name="OrgChartGroupPlan" Association="LongHu.DataAccess.OrgChartGroupPlan">
+            <End Role="OrgChart" EntitySet="OrgChart" />
+            <End Role="GroupPlan" EntitySet="GroupPlan" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeGroupPlan" Association="LongHu.DataAccess.EmployeeGroupPlan">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="GroupPlan" EntitySet="GroupPlan" />
+          </AssociationSet>
+          <EntitySet Name="GroupPlanCollection" EntityType="LongHu.DataAccess.GroupPlanCollection" />
+          <AssociationSet Name="GroupPlanGroupPlanCollection" Association="LongHu.DataAccess.GroupPlanGroupPlanCollection">
+            <End Role="GroupPlan" EntitySet="GroupPlan" />
+            <End Role="GroupPlanCollection" EntitySet="GroupPlanCollection" />
+          </AssociationSet>
+          <AssociationSet Name="ContractGroupPlanCollection" Association="LongHu.DataAccess.ContractGroupPlanCollection">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="GroupPlanCollection" EntitySet="GroupPlanCollection" />
+          </AssociationSet>
+          <EntitySet Name="GroupPlanDetail" EntityType="LongHu.DataAccess.GroupPlanDetail" />
+          <AssociationSet Name="GroupPlanCollectionGroupPlanDetail" Association="LongHu.DataAccess.GroupPlanCollectionGroupPlanDetail">
+            <End Role="GroupPlanCollection" EntitySet="GroupPlanCollection" />
+            <End Role="GroupPlanDetail" EntitySet="GroupPlanDetail" />
+          </AssociationSet>
+          <AssociationSet Name="DistrictPlanCollectionGroupPlanDetail" Association="LongHu.DataAccess.DistrictPlanCollectionGroupPlanDetail">
+            <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+            <End Role="GroupPlanDetail" EntitySet="GroupPlanDetail" />
+          </AssociationSet>
+          <EntitySet Name="DistrictProjectRelation" EntityType="LongHu.DataAccess.DistrictProjectRelation" />
+          <AssociationSet Name="ProjectPlanCollectionDistrictProjectRelation" Association="LongHu.DataAccess.ProjectPlanCollectionDistrictProjectRelation">
+            <End Role="ProjectPlanCollection" EntitySet="ProjectPlanCollection" />
+            <End Role="DistrictProjectRelation" EntitySet="DistrictProjectRelation" />
+          </AssociationSet>
+          <EntitySet Name="GroupDistrictRelation" EntityType="LongHu.DataAccess.GroupDistrictRelation" />
+          <AssociationSet Name="GroupPlanGroupDistrictRelation" Association="LongHu.DataAccess.GroupPlanGroupDistrictRelation">
+            <End Role="GroupPlan" EntitySet="GroupPlan" />
+            <End Role="GroupDistrictRelation" EntitySet="GroupDistrictRelation" />
+          </AssociationSet>
+          <AssociationSet Name="DistrictPlanCollectionGroupDistrictRelation" Association="LongHu.DataAccess.DistrictPlanCollectionGroupDistrictRelation">
+            <End Role="DistrictPlanCollection" EntitySet="DistrictPlanCollection" />
+            <End Role="GroupDistrictRelation" EntitySet="GroupDistrictRelation" />
+          </AssociationSet>
+          <AssociationSet Name="DistricPlanDistrictProjectRelation" Association="LongHu.DataAccess.DistricPlanDistrictProjectRelation">
+            <End Role="DistricPlan" EntitySet="DistrictPlan" />
+            <End Role="DistrictProjectRelation" EntitySet="DistrictProjectRelation" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="OrgChart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="ParentId" Precision="38" Scale="0" />
+          <Property Type="String" Name="Path" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="LongHu.DataAccess.OrgChartDepartment" FromRole="OrgChart" ToRole="Department" />
+          <NavigationProperty Name="ProjectStructure" Relationship="LongHu.DataAccess.OrgChartProjectStructure" FromRole="OrgChart" ToRole="ProjectStructure" />
+          <NavigationProperty Name="ProjectPlan" Relationship="LongHu.DataAccess.OrgChartProjectPlan" FromRole="OrgChart" ToRole="ProjectPlan" />
+          <NavigationProperty Name="DistricPlan" Relationship="LongHu.DataAccess.OrgChartDistricPlan" FromRole="OrgChart" ToRole="DistricPlan" />
+          <NavigationProperty Name="GroupPlan" Relationship="LongHu.DataAccess.OrgChartGroupPlan" FromRole="OrgChart" ToRole="GroupPlan" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="Unit" Nullable="false" />
+          <NavigationProperty Name="ProjectPlanCollection" Relationship="LongHu.DataAccess.ContractProjectPlanCollection" FromRole="Contract" ToRole="ProjectPlanCollection" />
+          <NavigationProperty Name="DistrictPlanCollection" Relationship="LongHu.DataAccess.ContractDistrictPlanCollection" FromRole="Contract" ToRole="DistrictPlanCollection" />
+          <NavigationProperty Name="GroupPlanCollection" Relationship="LongHu.DataAccess.ContractGroupPlanCollection" FromRole="Contract" ToRole="GroupPlanCollection" />
+        </EntityType>
+        <EntityType Name="DataDictionary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AttributeName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="DisplayOrder" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="LongHu.DataAccess.R_DEPARTMENTS_EMPLOYEE" FromRole="DEPARTMENT" ToRole="EMPLOYEE" />
+          <NavigationProperty Name="OrgChart" Relationship="LongHu.DataAccess.OrgChartDepartment" FromRole="Department" ToRole="OrgChart" />
+          <Property Type="Decimal" Name="OrgChartId" Nullable="true" Precision="38" Scale="0" />
+          <NavigationProperty Name="ProjectPlanCollection" Relationship="LongHu.DataAccess.DepartmentProjectPlanCollection" FromRole="Department" ToRole="ProjectPlanCollection" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactPhone1" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="LoginName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PassWord" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <Property Type="Decimal" Name="DepartmentId" Precision="38" Scale="0" />
+          <NavigationProperty Name="Department" Relationship="LongHu.DataAccess.R_DEPARTMENTS_EMPLOYEE" FromRole="EMPLOYEE" ToRole="DEPARTMENT" />
+          <NavigationProperty Name="ProjectPlanCollectionOrganizer" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection" FromRole="Employee" ToRole="ProjectPlanCollection" />
+          <NavigationProperty Name="ProjectPlanCollectionResearchOwner" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection1" FromRole="Employee" ToRole="ProjectPlanCollection" />
+          <NavigationProperty Name="ProjectPlanCollectionEngeer" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection2" FromRole="Employee" ToRole="ProjectPlanCollection" />
+          <NavigationProperty Name="ProjectPlanCollectionCostOwner" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection3" FromRole="Employee" ToRole="ProjectPlanCollection" />
+          <NavigationProperty Name="ProjectPlan" Relationship="LongHu.DataAccess.EmployeeProjectPlan" FromRole="Employee" ToRole="ProjectPlan" />
+          <NavigationProperty Name="DistricPlan" Relationship="LongHu.DataAccess.EmployeeDistricPlan" FromRole="Employee" ToRole="DistricPlan" />
+          <NavigationProperty Name="GroupPlan" Relationship="LongHu.DataAccess.EmployeeGroupPlan" FromRole="Employee" ToRole="GroupPlan" />
+        </EntityType>
+        <EntityType Name="ProjectPlan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="ProjectName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BidPlanNumber" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="VersionName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Version" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsForYear" Nullable="false" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <Property Type="DateTime" Name="OperatedOn" />
+          <Property Type="Decimal" Name="ProjectPlanStatusId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ProjectStructure" Relationship="LongHu.DataAccess.ProjectStructureProjectPlan" FromRole="ProjectPlan" ToRole="ProjectStructure" />
+          <Property Type="Decimal" Name="ProjectStructureId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="OrgChart" Relationship="LongHu.DataAccess.OrgChartProjectPlan" FromRole="ProjectPlan" ToRole="OrgChart" />
+          <Property Type="Decimal" Name="OrgChartId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ProjectPlanCollection" Relationship="LongHu.DataAccess.ProjectPlanProjectPlanCollection" FromRole="ProjectPlan" ToRole="ProjectPlanCollection" />
+          <NavigationProperty Name="Employee" Relationship="LongHu.DataAccess.EmployeeProjectPlan" FromRole="ProjectPlan" ToRole="Employee" />
+          <Property Type="Decimal" Name="OperatedBEmployeeId" Nullable="false" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="ProjectPlanCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Year" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AgreementNumber" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="UnitPrice" Nullable="false" Precision="11" Scale="2" />
+          <Property Type="Decimal" Name="EstimateValue" Nullable="false" Precision="11" Scale="2" />
+          <Property Type="String" Name="QualityRequirement" Nullable="false" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ReviewTime" />
+          <Property Type="DateTime" Name="DrawingProvidedTime" />
+          <Property Type="DateTime" Name="ContractTime" />
+          <Property Type="DateTime" Name="BidStartedTime" />
+          <Property Type="DateTime" Name="BidSeningTime" />
+          <Property Type="DateTime" Name="BidReturnTime" />
+          <Property Type="DateTime" Name="BidCheckTime" />
+          <Property Type="DateTime" Name="ContractSignTime" />
+          <Property Type="DateTime" Name="ComingIntoTime" />
+          <Property Type="String" Name="Comments" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="BidTypeId" Precision="38" Scale="0" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="ProjectPlan" Relationship="LongHu.DataAccess.ProjectPlanProjectPlanCollection" FromRole="ProjectPlanCollection" ToRole="ProjectPlan" />
+          <Property Type="Decimal" Name="ProjectPlanId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="Department" Relationship="LongHu.DataAccess.DepartmentProjectPlanCollection" FromRole="ProjectPlanCollection" ToRole="Department" />
+          <Property Type="Decimal" Name="DepartmentId" Nullable="true" Precision="38" Scale="0" />
+          <NavigationProperty Name="Contract" Relationship="LongHu.DataAccess.ContractProjectPlanCollection" FromRole="ProjectPlanCollection" ToRole="Contract" />
+          <Property Type="Decimal" Name="ContractId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="OrganizerEmployee" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection" FromRole="ProjectPlanCollection" ToRole="Employee" />
+          <Property Type="Decimal" Name="OrganizerEmployeeId" Nullable="true" Precision="38" Scale="0" />
+          <NavigationProperty Name="ResearchOwnerEmployee" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection1" FromRole="ProjectPlanCollection" ToRole="Employee" />
+          <Property Type="Decimal" Name="ResearchOwnerEmployeeId" Nullable="true" Precision="38" Scale="0" />
+          <NavigationProperty Name="EngeerEmployee" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection2" FromRole="ProjectPlanCollection" ToRole="Employee" />
+          <Property Type="Decimal" Name="EngeerEmployeeId" Nullable="true" Precision="38" Scale="0" />
+          <NavigationProperty Name="CostOwnerEmployee" Relationship="LongHu.DataAccess.EmployeeProjectPlanCollection3" FromRole="ProjectPlanCollection" ToRole="Employee" />
+          <Property Type="Decimal" Name="CostOwnerEmployeeId" Nullable="true" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="ContractCategoryId" Nullable="false" />
+          <Property Type="Decimal" Name="ContractTypeId" Nullable="false" />
+          <Property Type="Decimal" Name="ContractRelationId" Nullable="false" />
+          <NavigationProperty Name="DistrictPlanDetails" Relationship="LongHu.DataAccess.ProjectPlanCollectionDistrictPlanDetails" FromRole="ProjectPlanCollection" ToRole="DistrictPlanDetails" />
+          <NavigationProperty Name="DistrictProjectRelation" Relationship="LongHu.DataAccess.ProjectPlanCollectionDistrictProjectRelation" FromRole="ProjectPlanCollection" ToRole="DistrictProjectRelation" />
+        </EntityType>
+        <EntityType Name="ProjectStructure">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="PARENTID" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Path" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="IsProject" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="OrgChart" Relationship="LongHu.DataAccess.OrgChartProjectStructure" FromRole="ProjectStructure" ToRole="OrgChart" />
+          <Property Type="Decimal" Name="OrgChartId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ProjectPlan" Relationship="LongHu.DataAccess.ProjectStructureProjectPlan" FromRole="ProjectStructure" ToRole="ProjectPlan" />
+        </EntityType>
+        <Association Name="R_DEPARTMENTS_EMPLOYEE">
+          <End Type="LongHu.DataAccess.Department" Role="DEPARTMENT" Multiplicity="0..1" />
+          <End Type="LongHu.DataAccess.Employee" Role="EMPLOYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENT">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EMPLOYEE">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrgChartDepartment">
+          <End Type="LongHu.DataAccess.OrgChart" Role="OrgChart" Multiplicity="0..1" />
+          <End Type="LongHu.DataAccess.Department" Role="Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgChart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="OrgChartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrgChartProjectStructure">
+          <End Type="LongHu.DataAccess.OrgChart" Role="OrgChart" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.ProjectStructure" Role="ProjectStructure" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgChart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectStructure">
+              <PropertyRef Name="OrgChartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProjectStructureProjectPlan">
+          <End Type="LongHu.DataAccess.ProjectStructure" Role="ProjectStructure" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.ProjectPlan" Role="ProjectPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStructure">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlan">
+              <PropertyRef Name="ProjectStructureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OrgChartProjectPlan">
+          <End Type="LongHu.DataAccess.OrgChart" Role="OrgChart" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.ProjectPlan" Role="ProjectPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgChart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlan">
+              <PropertyRef Name="OrgChartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProjectPlanProjectPlanCollection">
+          <End Type="LongHu.DataAccess.ProjectPlan" Role="ProjectPlan" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectPlan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+              <PropertyRef Name="ProjectPlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DepartmentProjectPlanCollection">
+          <End Type="LongHu.DataAccess.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContractProjectPlanCollection">
+          <End Type="LongHu.DataAccess.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeProjectPlanCollection">
+          <End Type="LongHu.DataAccess.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+              <PropertyRef Name="OrganizerEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeProjectPlanCollection1">
+          <End Type="LongHu.DataAccess.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+              <PropertyRef Name="ResearchOwnerEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeProjectPlanCollection2">
+          <End Type="LongHu.DataAccess.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+              <PropertyRef Name="EngeerEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeProjectPlanCollection3">
+          <End Type="LongHu.DataAccess.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlanCollection">
+              <PropertyRef Name="CostOwnerEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DistrictPlan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="DistricPlanNumber" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="VersionName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Version" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsActive" Nullable="false" />
+          <Property Type="DateTime" Name="OperatedOn" />
+          <Property Type="Decimal" Name="DistricPlanStatusId" Nullable="false" />
+          <NavigationProperty Name="OrgChart" Relationship="LongHu.DataAccess.OrgChartDistricPlan" FromRole="DistricPlan" ToRole="OrgChart" />
+          <Property Type="Decimal" Name="OrgChartId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="Employee" Relationship="LongHu.DataAccess.EmployeeDistricPlan" FromRole="DistricPlan" ToRole="Employee" />
+          <Property Type="Decimal" Name="OperatedBEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="DistrictPlanCollection" Relationship="LongHu.DataAccess.DistricPlanDistrictPlanCollection" FromRole="DistricPlan" ToRole="DistrictPlanCollection" />
+          <NavigationProperty Name="DistrictProjectRelation" Relationship="LongHu.DataAccess.DistricPlanDistrictProjectRelation" FromRole="DistricPlan" ToRole="DistrictProjectRelation" />
+        </EntityType>
+        <Association Name="OrgChartDistricPlan">
+          <End Type="LongHu.DataAccess.OrgChart" Role="OrgChart" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictPlan" Role="DistricPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgChart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistricPlan">
+              <PropertyRef Name="OrgChartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeProjectPlan">
+          <End Type="LongHu.DataAccess.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.ProjectPlan" Role="ProjectPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProjectPlan">
+              <PropertyRef Name="OperatedBEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeDistricPlan">
+          <End Type="LongHu.DataAccess.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictPlan" Role="DistricPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistricPlan">
+              <PropertyRef Name="OperatedBEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DistrictPlanCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Year" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AgreementNumber" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QualityRequirement" Nullable="false" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ReviewTime" />
+          <Property Type="DateTime" Name="DrawingProvidedTime" />
+          <Property Type="DateTime" Name="ContractTime" />
+          <Property Type="DateTime" Name="BidStartedTime" />
+          <Property Type="DateTime" Name="BidSeningTime" />
+          <Property Type="DateTime" Name="BidReturnTime" />
+          <Property Type="DateTime" Name="BidCheckTime" />
+          <Property Type="DateTime" Name="ContractSignTime" />
+          <Property Type="DateTime" Name="ComingIntoTime" />
+          <Property Type="String" Name="Comments" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="BidTypeId" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsActive" Nullable="false" />
+          <Property Type="Decimal" Name="ContractCategoryId" Nullable="false" />
+          <Property Type="Decimal" Name="BidModeId" Nullable="false" />
+          <NavigationProperty Name="DistricPlan" Relationship="LongHu.DataAccess.DistricPlanDistrictPlanCollection" FromRole="DistrictPlanCollection" ToRole="DistricPlan" />
+          <Property Type="Decimal" Name="DistricPlanId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="Contract" Relationship="LongHu.DataAccess.ContractDistrictPlanCollection" FromRole="DistrictPlanCollection" ToRole="Contract" />
+          <Property Type="Decimal" Name="ContractId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsVoilate" Nullable="false" />
+          <Property Type="String" Name="Reason" Nullable="false" />
+          <Property Type="String" Name="TotalNumber" Nullable="false" />
+          <Property Type="String" Name="EstimatedTotalValue" Nullable="false" />
+          <Property Type="String" Name="SubmittionNmuber" Nullable="false" />
+          <Property Type="String" Name="SubmittionValue" Nullable="false" />
+          <NavigationProperty Name="DistrictPlanDetails" Relationship="LongHu.DataAccess.DistrictPlanCollectionDistrictPlanDetails" FromRole="DistrictPlanCollection" ToRole="DistrictPlanDetails" />
+          <NavigationProperty Name="GroupPlanDetail" Relationship="LongHu.DataAccess.DistrictPlanCollectionGroupPlanDetail" FromRole="DistrictPlanCollection" ToRole="GroupPlanDetail" />
+          <NavigationProperty Name="GroupDistrictRelation" Relationship="LongHu.DataAccess.DistrictPlanCollectionGroupDistrictRelation" FromRole="DistrictPlanCollection" ToRole="GroupDistrictRelation" />
+        </EntityType>
+        <Association Name="DistricPlanDistrictPlanCollection">
+          <End Type="LongHu.DataAccess.DistrictPlan" Role="DistricPlan" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictPlanCollection" Role="DistrictPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistricPlan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanCollection">
+              <PropertyRef Name="DistricPlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContractDistrictPlanCollection">
+          <End Type="LongHu.DataAccess.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictPlanCollection" Role="DistrictPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanCollection">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DistrictPlanDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="DistrictPlanCollection" Relationship="LongHu.DataAccess.DistrictPlanCollectionDistrictPlanDetails" FromRole="DistrictPlanDetails" ToRole="DistrictPlanCollection" />
+          <Property Type="Decimal" Name="DistrictPlanCollectionId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="ProjectPlanCollection" Relationship="LongHu.DataAccess.ProjectPlanCollectionDistrictPlanDetails" FromRole="DistrictPlanDetails" ToRole="ProjectPlanCollection" />
+          <Property Type="Decimal" Name="ProjectPlanCollectionId" Nullable="false" Precision="38" Scale="0" />
+        </EntityType>
+        <Association Name="DistrictPlanCollectionDistrictPlanDetails">
+          <End Type="LongHu.DataAccess.DistrictPlanCollection" Role="DistrictPlanCollection" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictPlanDetails" Role="DistrictPlanDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistrictPlanCollection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanDetails">
+              <PropertyRef Name="DistrictPlanCollectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProjectPlanCollectionDistrictPlanDetails">
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictPlanDetails" Role="DistrictPlanDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectPlanCollection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictPlanDetails">
+              <PropertyRef Name="ProjectPlanCollectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GroupPlan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="GroupPlanNumber" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="VersionName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Version" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsActive" Nullable="false" />
+          <Property Type="DateTime" Name="OperatedOn" />
+          <Property Type="Decimal" Name="GroupPlanStatusId" Nullable="false" />
+          <NavigationProperty Name="OrgChart" Relationship="LongHu.DataAccess.OrgChartGroupPlan" FromRole="GroupPlan" ToRole="OrgChart" />
+          <Property Type="Decimal" Name="OrgChartId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="Employee" Relationship="LongHu.DataAccess.EmployeeGroupPlan" FromRole="GroupPlan" ToRole="Employee" />
+          <Property Type="Decimal" Name="OperatedEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="GroupPlanCollection" Relationship="LongHu.DataAccess.GroupPlanGroupPlanCollection" FromRole="GroupPlan" ToRole="GroupPlanCollection" />
+          <NavigationProperty Name="GroupDistrictRelation" Relationship="LongHu.DataAccess.GroupPlanGroupDistrictRelation" FromRole="GroupPlan" ToRole="GroupDistrictRelation" />
+        </EntityType>
+        <Association Name="OrgChartGroupPlan">
+          <End Type="LongHu.DataAccess.OrgChart" Role="OrgChart" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupPlan" Role="GroupPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrgChart">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlan">
+              <PropertyRef Name="OrgChartId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeGroupPlan">
+          <End Type="LongHu.DataAccess.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupPlan" Role="GroupPlan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlan">
+              <PropertyRef Name="OperatedEmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GroupPlanCollection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="String" Name="Year" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AgreementNumber" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Unit" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QualityRequirement" Nullable="false" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="ReviewTime" />
+          <Property Type="DateTime" Name="DrawingProvidedTime" />
+          <Property Type="DateTime" Name="ContractTime" />
+          <Property Type="DateTime" Name="BidStartedTime" />
+          <Property Type="DateTime" Name="BidSeningTime" />
+          <Property Type="DateTime" Name="BidReturnTime" />
+          <Property Type="DateTime" Name="BidCheckTime" />
+          <Property Type="DateTime" Name="ContractSignTime" />
+          <Property Type="DateTime" Name="ComingIntoTime" />
+          <Property Type="String" Name="Comments" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Decimal" Name="BidTypeId" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsActive" Nullable="false" />
+          <Property Type="Decimal" Name="ContractCategoryId" Nullable="false" />
+          <Property Type="Decimal" Name="BidModeId" Nullable="false" />
+          <Property Type="Int16" Name="IsVoilate" Nullable="false" />
+          <Property Type="String" Name="Reason" Nullable="false" />
+          <Property Type="String" Name="TotalNumber" Nullable="false" />
+          <Property Type="String" Name="EstimatedTotalValue" Nullable="false" />
+          <Property Type="String" Name="SubmittionNmuber" Nullable="false" />
+          <Property Type="String" Name="SubmittionValue" Nullable="false" />
+          <NavigationProperty Name="GroupPlan" Relationship="LongHu.DataAccess.GroupPlanGroupPlanCollection" FromRole="GroupPlanCollection" ToRole="GroupPlan" />
+          <Property Type="Decimal" Name="GroupPlanId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="Contract" Relationship="LongHu.DataAccess.ContractGroupPlanCollection" FromRole="GroupPlanCollection" ToRole="Contract" />
+          <Property Type="Decimal" Name="ContractId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="GroupPlanDetail" Relationship="LongHu.DataAccess.GroupPlanCollectionGroupPlanDetail" FromRole="GroupPlanCollection" ToRole="GroupPlanDetail" />
+        </EntityType>
+        <Association Name="GroupPlanGroupPlanCollection">
+          <End Type="LongHu.DataAccess.GroupPlan" Role="GroupPlan" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupPlanCollection" Role="GroupPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupPlan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanCollection">
+              <PropertyRef Name="GroupPlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContractGroupPlanCollection">
+          <End Type="LongHu.DataAccess.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupPlanCollection" Role="GroupPlanCollection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanCollection">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GroupPlanDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" />
+          <Property Type="Decimal" Name="CreatedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="Decimal" Name="ModifiedByEmployeeId" Nullable="false" Precision="38" Scale="0" />
+          <Property Type="Int16" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="GroupPlanCollection" Relationship="LongHu.DataAccess.GroupPlanCollectionGroupPlanDetail" FromRole="GroupPlanDetail" ToRole="GroupPlanCollection" />
+          <Property Type="Decimal" Name="GroupPlanCollectionId" Nullable="false" Precision="38" Scale="0" />
+          <NavigationProperty Name="DistrictPlanCollection" Relationship="LongHu.DataAccess.DistrictPlanCollectionGroupPlanDetail" FromRole="GroupPlanDetail" ToRole="DistrictPlanCollection" />
+          <Property Type="Decimal" Name="DistrictPlanCollectionId" Nullable="false" Precision="38" Scale="0" />
+        </EntityType>
+        <Association Name="GroupPlanCollectionGroupPlanDetail">
+          <End Type="LongHu.DataAccess.GroupPlanCollection" Role="GroupPlanCollection" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupPlanDetail" Role="GroupPlanDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupPlanCollection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanDetail">
+              <PropertyRef Name="GroupPlanCollectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DistrictPlanCollectionGroupPlanDetail">
+          <End Type="LongHu.DataAccess.DistrictPlanCollection" Role="DistrictPlanCollection" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupPlanDetail" Role="GroupPlanDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistrictPlanCollection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupPlanDetail">
+              <PropertyRef Name="DistrictPlanCollectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DistrictProjectRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Decimal" Name="DistrictPlanId" Nullable="false" />
+          <Property Type="Decimal" Name="ProjectPlanCollectionId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <NavigationProperty Name="ProjectPlanCollection" Relationship="LongHu.DataAccess.ProjectPlanCollectionDistrictProjectRelation" FromRole="DistrictProjectRelation" ToRole="ProjectPlanCollection" />
+          <NavigationProperty Name="DistricPlan" Relationship="LongHu.DataAccess.DistricPlanDistrictProjectRelation" FromRole="DistrictProjectRelation" ToRole="DistricPlan" />
+        </EntityType>
+        <Association Name="ProjectPlanCollectionDistrictProjectRelation">
+          <End Type="LongHu.DataAccess.ProjectPlanCollection" Role="ProjectPlanCollection" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictProjectRelation" Role="DistrictProjectRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectPlanCollection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictProjectRelation">
+              <PropertyRef Name="ProjectPlanCollectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GroupDistrictRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Decimal" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="GroupPlanId" Nullable="false" />
+          <Property Type="Decimal" Name="DistrictPlanCollectionId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateOn" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <NavigationProperty Name="GroupPlan" Relationship="LongHu.DataAccess.GroupPlanGroupDistrictRelation" FromRole="GroupDistrictRelation" ToRole="GroupPlan" />
+          <NavigationProperty Name="DistrictPlanCollection" Relationship="LongHu.DataAccess.DistrictPlanCollectionGroupDistrictRelation" FromRole="GroupDistrictRelation" ToRole="DistrictPlanCollection" />
+        </EntityType>
+        <Association Name="GroupPlanGroupDistrictRelation">
+          <End Type="LongHu.DataAccess.GroupPlan" Role="GroupPlan" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupDistrictRelation" Role="GroupDistrictRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupPlan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupDistrictRelation">
+              <PropertyRef Name="GroupPlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DistrictPlanCollectionGroupDistrictRelation">
+          <End Type="LongHu.DataAccess.DistrictPlanCollection" Role="DistrictPlanCollection" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.GroupDistrictRelation" Role="GroupDistrictRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistrictPlanCollection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupDistrictRelation">
+              <PropertyRef Name="DistrictPlanCollectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DistricPlanDistrictProjectRelation">
+          <End Type="LongHu.DataAccess.DistrictPlan" Role="DistricPlan" Multiplicity="1" />
+          <End Type="LongHu.DataAccess.DistrictProjectRelation" Role="DistrictProjectRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DistricPlan">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DistrictProjectRelation">
+              <PropertyRef Name="DistrictPlanId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+    <EntityContainerMapping StorageEntityContainer="LongHuDataAccessStoreContainer" CdmEntityContainer="LongHuEntities">
+        <EntitySetMapping Name="OrgChart">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.OrgChart)">
+                <MappingFragment StoreEntitySet="OrgChart">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Name" ColumnName="Name" />
+                    <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                    <ScalarProperty Name="Path" ColumnName="Path" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="Contract">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.Contract)">
+                <MappingFragment StoreEntitySet="Contract">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Name" ColumnName="Name" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="Unit" ColumnName="Unit" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="DataDictionary">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.DataDictionary)">
+                <MappingFragment StoreEntitySet="DataDictionary">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Name" ColumnName="Name" />
+                    <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+                    <ScalarProperty Name="Value" ColumnName="Value" />
+                    <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="Department">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.Department)">
+                <MappingFragment StoreEntitySet="Department">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Name" ColumnName="Name" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="OrgChartId" ColumnName="OrgChartId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.Employee)">
+                <MappingFragment StoreEntitySet="Employee">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="UserName" ColumnName="UserName" />
+                    <ScalarProperty Name="Email" ColumnName="Email" />
+                    <ScalarProperty Name="ContactPhone1" ColumnName="ContactPhone1" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                    <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="ProjectPlan">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.ProjectPlan)">
+                <MappingFragment StoreEntitySet="ProjectPlan">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                    <ScalarProperty Name="BidPlanNumber" ColumnName="BidPlanNumber" />
+                    <ScalarProperty Name="Description" ColumnName="Description" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="VersionName" ColumnName="VersionName" />
+                    <ScalarProperty Name="Version" ColumnName="Version" />
+                    <ScalarProperty Name="IsForYear" ColumnName="IsForYear" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="OperatedOn" ColumnName="OperatedOn" />
+                    <ScalarProperty Name="ProjectPlanStatusId" ColumnName="ProjectPlanStatusId" />
+                    <ScalarProperty Name="ProjectStructureId" ColumnName="ProjectStructureId" />
+                    <ScalarProperty Name="OrgChartId" ColumnName="OrgChartId" />
+                    <ScalarProperty Name="OperatedBEmployeeId" ColumnName="OperatedBEmployeeId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="ProjectPlanCollection">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.ProjectPlanCollection)">
+                <MappingFragment StoreEntitySet="ProjectPlanCollection">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Year" ColumnName="Year" />
+                    <ScalarProperty Name="AgreementNumber" ColumnName="AgreementNumber" />
+                    <ScalarProperty Name="Unit" ColumnName="Unit" />
+                    <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                    <ScalarProperty Name="EstimateValue" ColumnName="EstimateValue" />
+                    <ScalarProperty Name="QualityRequirement" ColumnName="QualityRequirement" />
+                    <ScalarProperty Name="ReviewTime" ColumnName="ReviewTime" />
+                    <ScalarProperty Name="DrawingProvidedTime" ColumnName="DrawingProvidedTime" />
+                    <ScalarProperty Name="ContractTime" ColumnName="ContractTime" />
+                    <ScalarProperty Name="BidStartedTime" ColumnName="BidStartedTime" />
+                    <ScalarProperty Name="BidSeningTime" ColumnName="BidSeningTime" />
+                    <ScalarProperty Name="BidReturnTime" ColumnName="BidReturnTime" />
+                    <ScalarProperty Name="BidCheckTime" ColumnName="BidCheckTime" />
+                    <ScalarProperty Name="ContractSignTime" ColumnName="ContractSignTime" />
+                    <ScalarProperty Name="ComingIntoTime" ColumnName="ComingIntoTime" />
+                    <ScalarProperty Name="Comments" ColumnName="Comments" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="BidTypeId" ColumnName="BidTypeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="ProjectPlanId" ColumnName="ProjectPlanId" />
+                    <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                    <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+                    <ScalarProperty Name="OrganizerEmployeeId" ColumnName="OrganizerEmployeeId" />
+                    <ScalarProperty Name="ResearchOwnerEmployeeId" ColumnName="ResearchOwnerEmployeeId" />
+                    <ScalarProperty Name="EngeerEmployeeId" ColumnName="EngeerEmployeeId" />
+                    <ScalarProperty Name="CostOwnerEmployeeId" ColumnName="CostOwnerEmployeeId" />
+                    <ScalarProperty Name="ContractCategoryId" ColumnName="ContractCategoryId" />
+                    <ScalarProperty Name="ContractTypeId" ColumnName="ContractTypeId" />
+                    <ScalarProperty Name="ContractRelationId" ColumnName="ContractRelationId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="ProjectStructure">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.ProjectStructure)">
+                <MappingFragment StoreEntitySet="ProjectStructure">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Name" ColumnName="Name" />
+                    <ScalarProperty Name="PARENTID" ColumnName="PARENTID" />
+                    <ScalarProperty Name="Path" ColumnName="Path" />
+                    <ScalarProperty Name="IsProject" ColumnName="IsProject" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="OrgChartId" ColumnName="OrgChartId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="DistrictPlan">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.DistrictPlan)">
+                <MappingFragment StoreEntitySet="DistrictPlan">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="DistricPlanNumber" ColumnName="DistricPlanNumber" />
+                    <ScalarProperty Name="Description" ColumnName="Description" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="VersionName" ColumnName="VersionName" />
+                    <ScalarProperty Name="Version" ColumnName="Version" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="OperatedOn" ColumnName="OperatedOn" />
+                    <ScalarProperty Name="DistricPlanStatusId" ColumnName="DistricPlanStatusId" />
+                    <ScalarProperty Name="OrgChartId" ColumnName="OrgChartId" />
+                    <ScalarProperty Name="OperatedBEmployeeId" ColumnName="OperatedBEmployeeId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="DistrictPlanCollection">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.DistrictPlanCollection)">
+                <MappingFragment StoreEntitySet="DistrictPlanCollection">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Year" ColumnName="Year" />
+                    <ScalarProperty Name="AgreementNumber" ColumnName="AgreementNumber" />
+                    <ScalarProperty Name="Unit" ColumnName="Unit" />
+                    <ScalarProperty Name="QualityRequirement" ColumnName="QualityRequirement" />
+                    <ScalarProperty Name="ReviewTime" ColumnName="ReviewTime" />
+                    <ScalarProperty Name="DrawingProvidedTime" ColumnName="DrawingProvidedTime" />
+                    <ScalarProperty Name="ContractTime" ColumnName="ContractTime" />
+                    <ScalarProperty Name="BidStartedTime" ColumnName="BidStartedTime" />
+                    <ScalarProperty Name="BidSeningTime" ColumnName="BidSeningTime" />
+                    <ScalarProperty Name="BidReturnTime" ColumnName="BidReturnTime" />
+                    <ScalarProperty Name="BidCheckTime" ColumnName="BidCheckTime" />
+                    <ScalarProperty Name="ContractSignTime" ColumnName="ContractSignTime" />
+                    <ScalarProperty Name="ComingIntoTime" ColumnName="ComingIntoTime" />
+                    <ScalarProperty Name="Comments" ColumnName="Comments" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="BidTypeId" ColumnName="BidTypeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="ContractCategoryId" ColumnName="ContractCategoryId" />
+                    <ScalarProperty Name="BidModeId" ColumnName="BidModeId" />
+                    <ScalarProperty Name="DistricPlanId" ColumnName="DistricPlanId" />
+                    <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+                    <ScalarProperty Name="IsVoilate" ColumnName="IsVoilate" />
+                    <ScalarProperty Name="Reason" ColumnName="Reason" />
+                    <ScalarProperty Name="TotalNumber" ColumnName="TotalNumber" />
+                    <ScalarProperty Name="EstimatedTotalValue" ColumnName="EstimatedTotalValue" />
+                    <ScalarProperty Name="SubmittionNmuber" ColumnName="SubmittionNmuber" />
+                    <ScalarProperty Name="SubmittionValue" ColumnName="SubmittionValue" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="DistrictPlanDetails">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.DistrictPlanDetails)">
+                <MappingFragment StoreEntitySet="DistrictPlanDetails">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="DistrictPlanCollectionId" ColumnName="DistrictPlanCollectionId" />
+                    <ScalarProperty Name="ProjectPlanCollectionId" ColumnName="ProjectPlanCollectionId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="GroupPlan">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.GroupPlan)">
+                <MappingFragment StoreEntitySet="GroupPlan">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="GroupPlanNumber" ColumnName="GroupPlanNumber" />
+                    <ScalarProperty Name="Description" ColumnName="Description" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="VersionName" ColumnName="VersionName" />
+                    <ScalarProperty Name="Version" ColumnName="Version" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="OperatedOn" ColumnName="OperatedOn" />
+                    <ScalarProperty Name="GroupPlanStatusId" ColumnName="GroupPlanStatusId" />
+                    <ScalarProperty Name="OrgChartId" ColumnName="OrgChartId" />
+                    <ScalarProperty Name="OperatedEmployeeId" ColumnName="OperatedEmployeeId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="GroupPlanCollection">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.GroupPlanCollection)">
+                <MappingFragment StoreEntitySet="GroupPlanCollection">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="Year" ColumnName="Year" />
+                    <ScalarProperty Name="AgreementNumber" ColumnName="AgreementNumber" />
+                    <ScalarProperty Name="Unit" ColumnName="Unit" />
+                    <ScalarProperty Name="QualityRequirement" ColumnName="QualityRequirement" />
+                    <ScalarProperty Name="ReviewTime" ColumnName="ReviewTime" />
+                    <ScalarProperty Name="DrawingProvidedTime" ColumnName="DrawingProvidedTime" />
+                    <ScalarProperty Name="ContractTime" ColumnName="ContractTime" />
+                    <ScalarProperty Name="BidStartedTime" ColumnName="BidStartedTime" />
+                    <ScalarProperty Name="BidSeningTime" ColumnName="BidSeningTime" />
+                    <ScalarProperty Name="BidReturnTime" ColumnName="BidReturnTime" />
+                    <ScalarProperty Name="BidCheckTime" ColumnName="BidCheckTime" />
+                    <ScalarProperty Name="ContractSignTime" ColumnName="ContractSignTime" />
+                    <ScalarProperty Name="ComingIntoTime" ColumnName="ComingIntoTime" />
+                    <ScalarProperty Name="Comments" ColumnName="Comments" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="BidTypeId" ColumnName="BidTypeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="ContractCategoryId" ColumnName="ContractCategoryId" />
+                    <ScalarProperty Name="BidModeId" ColumnName="BidModeId" />
+                    <ScalarProperty Name="IsVoilate" ColumnName="IsVoilate" />
+                    <ScalarProperty Name="Reason" ColumnName="Reason" />
+                    <ScalarProperty Name="TotalNumber" ColumnName="TotalNumber" />
+                    <ScalarProperty Name="EstimatedTotalValue" ColumnName="EstimatedTotalValue" />
+                    <ScalarProperty Name="SubmittionNmuber" ColumnName="SubmittionNmuber" />
+                    <ScalarProperty Name="SubmittionValue" ColumnName="SubmittionValue" />
+                    <ScalarProperty Name="GroupPlanId" ColumnName="GroupPlanId" />
+                    <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="GroupPlanDetail">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.GroupPlanDetail)">
+                <MappingFragment StoreEntitySet="GroupPlanDetail">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                    <ScalarProperty Name="CreatedByEmployeeId" ColumnName="CreatedByEmployeeId" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                    <ScalarProperty Name="ModifiedByEmployeeId" ColumnName="ModifiedByEmployeeId" />
+                    <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                    <ScalarProperty Name="GroupPlanCollectionId" ColumnName="GroupPlanCollectionId" />
+                    <ScalarProperty Name="DistrictPlanCollectionId" ColumnName="DistrictPlanCollectionId" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="DistrictProjectRelation">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.DistrictProjectRelation)">
+                <MappingFragment StoreEntitySet="DistrictProjectRelation">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="DistrictPlanId" ColumnName="DistrictPlanId" />
+                    <ScalarProperty Name="ProjectPlanCollectionId" ColumnName="ProjectPlanCollectionId" />
+                    <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+        <EntitySetMapping Name="GroupDistrictRelation">
+            <EntityTypeMapping TypeName="IsTypeOf(LongHu.DataAccess.GroupDistrictRelation)">
+                <MappingFragment StoreEntitySet="GroupDistrictRelation">
+                    <ScalarProperty Name="Id" ColumnName="Id" />
+                    <ScalarProperty Name="GroupPlanId" ColumnName="GroupPlanId" />
+                    <ScalarProperty Name="DistrictPlanCollectionId" ColumnName="DistrictPlanCollectionId" />
+                    <ScalarProperty Name="CreateOn" ColumnName="CreateOn" />
+                    <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                </MappingFragment>
+            </EntityTypeMapping>
+        </EntitySetMapping>
+    </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToOracle.tt" />
+        <DesignerProperty Name="DatabaseGenerationWorkflow" Value="$(VSEFTools)\DBGen\Generate Oracle Via T4 (TPT).xaml" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="LONGUSER" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="LongHu" ZoomLevel="72">
+        <EntityTypeShape EntityType="LongHu.DataAccess.OrgChart" Width="1.5" PointX="0.5" PointY="7" Height="2.9711718749999996" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.Contract" Width="1.625" PointX="14" PointY="11.875" Height="2.3166927083333322" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.DataDictionary" Width="1.5" PointX="9.75" PointY="3.125" Height="0.94773437499999957" IsExpanded="true" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.Department" Width="1.5" PointX="2.875" PointY="5.25" Height="1.2849739583333326" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.Employee" Width="1.5" PointX="5.75" PointY="3.5" Height="3.6456510416666656" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.ProjectPlan" Width="1.5" PointX="5.625" PointY="8.75" Height="4.3201302083333335" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.ProjectPlanCollection" Width="2.125" PointX="8.25" PointY="6.875" Height="7.6925260416666656" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.ProjectStructure" Width="1.5" PointX="3" PointY="8.875" Height="3.1397916666666674" />
+        <AssociationConnector Association="LongHu.DataAccess.R_DEPARTMENTS_EMPLOYEE" >
+          <ConnectorPoint PointX="4.375" PointY="5.976796875" />
+          <ConnectorPoint PointX="5.75" PointY="5.976796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.OrgChartDepartment" ManuallyRouted="true">
+          <ConnectorPoint PointX="2" PointY="7.6406225" />
+          <ConnectorPoint PointX="2.90625" PointY="7.6406225" />
+          <ConnectorPoint PointX="2.90625" PointY="6.5349739583333326" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.OrgChartProjectStructure" ManuallyRouted="false">
+          <ConnectorPoint PointX="2" PointY="9.4230859375" />
+          <ConnectorPoint PointX="3" PointY="9.4230859375" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.ProjectStructureProjectPlan">
+          <ConnectorPoint PointX="4.5" PointY="10.444895833333334" />
+          <ConnectorPoint PointX="5.625" PointY="10.444895833333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.OrgChartProjectPlan">
+          <ConnectorPoint PointX="2" PointY="8.34375" />
+          <ConnectorPoint PointX="2.8385416666666665" PointY="8.34375" />
+          <ConnectorPoint PointX="3.0052083333333335" PointY="8.34375" />
+          <ConnectorPoint PointX="5.625" PointY="8.34375" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.ProjectPlanProjectPlanCollection">
+          <ConnectorPoint PointX="7.125" PointY="10.119375000000002" />
+          <ConnectorPoint PointX="7.135416666666667" PointY="10.119375000000002" />
+          <ConnectorPoint PointX="7.302083333333333" PointY="10.119375000000002" />
+          <ConnectorPoint PointX="8.25" PointY="10.119375000000002" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.DepartmentProjectPlanCollection" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.921875" PointY="6.70359375" />
+          <ConnectorPoint PointX="2.921875" PointY="13.181875000000002" />
+          <ConnectorPoint PointX="7.119791666666667" PointY="13.181875000000002" />
+          <ConnectorPoint PointX="7.302083333333333" PointY="13.181875000000002" />
+          <ConnectorPoint PointX="8.25" PointY="13.181875000000002" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.ContractProjectPlanCollection">
+          <ConnectorPoint PointX="14" PointY="13.10765625" />
+          <ConnectorPoint PointX="10.375" PointY="13.10765625" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.EmployeeProjectPlanCollection">
+          <ConnectorPoint PointX="7.25" PointY="7.364367633728949" />
+          <ConnectorPoint PointX="8.25" PointY="7.364367633728949" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.EmployeeProjectPlanCollection1">
+          <ConnectorPoint PointX="7.25" PointY="6.9223177083333338" />
+          <ConnectorPoint PointX="8.25" PointY="6.9223177083333338" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.EmployeeProjectPlanCollection2">
+          <ConnectorPoint PointX="7.25" PointY="7.1208446424578984" />
+          <ConnectorPoint PointX="8.25" PointY="7.1208446424578984" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.EmployeeProjectPlanCollection3" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="5.380116687500001" />
+          <ConnectorPoint PointX="9.21875" PointY="5.380116687500001" />
+          <ConnectorPoint PointX="9.21875" PointY="6.875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LongHu.DataAccess.DistrictPlan" Width="2.25" PointX="3" PointY="14" Height="3.3084114583333353" />
+        <AssociationConnector Association="LongHu.DataAccess.OrgChartDistricPlan">
+          <ConnectorPoint PointX="1.07812625" PointY="10.308411458333334" />
+          <ConnectorPoint PointX="1.07812625" PointY="15.907135416666668" />
+          <ConnectorPoint PointX="1.4869822916666668" PointY="15.907135416666668" />
+          <ConnectorPoint PointX="1.6536489583333334" PointY="15.907135416666668" />
+          <ConnectorPoint PointX="3" PointY="15.907135416666668" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.EmployeeProjectPlan">
+          <ConnectorPoint PointX="6.4375" PointY="7.482890625" />
+          <ConnectorPoint PointX="6.4375" PointY="7.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.EmployeeDistricPlan" ManuallyRouted="false">
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LongHu.DataAccess.DistrictPlanCollection" Width="2.25" PointX="8.25" PointY="16.25" Height="6.5121875" />
+        <AssociationConnector Association="LongHu.DataAccess.DistricPlanDistrictPlanCollection">
+          <ConnectorPoint PointX="4.5" PointY="16.344635416666669" />
+          <ConnectorPoint PointX="7.119791666666667" PointY="16.344635416666669" />
+          <ConnectorPoint PointX="7.286458333333333" PointY="16.344635416666669" />
+          <ConnectorPoint PointX="8.25" PointY="16.344635416666669" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.ContractDistrictPlanCollection">
+          <ConnectorPoint PointX="14.525389687499999" PointY="14.677552083333334" />
+          <ConnectorPoint PointX="14.525389687499999" PointY="19.558824375" />
+          <ConnectorPoint PointX="13.489583333333334" PointY="19.558824375" />
+          <ConnectorPoint PointX="13.322916666666666" PointY="19.558824375" />
+          <ConnectorPoint PointX="10.5" PointY="19.558824375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LongHu.DataAccess.DistrictPlanDetails" Width="2.125" PointX="11.625" PointY="14.125" Height="1.9594531250000031" />
+        <AssociationConnector Association="LongHu.DataAccess.DistrictPlanCollectionDistrictPlanDetails">
+          <ConnectorPoint PointX="10.5" PointY="15.648346354166668" />
+          <ConnectorPoint PointX="11.625" PointY="15.648346354166668" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.ProjectPlanCollectionDistrictPlanDetails">
+          <ConnectorPoint PointX="10.375" PointY="14.430572916666666" />
+          <ConnectorPoint PointX="11.625" PointY="14.430572916666666" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LongHu.DataAccess.GroupPlan" Width="1.5" PointX="2.875" PointY="19.125" Height="2.9711718750000031" />
+        <AssociationConnector Association="LongHu.DataAccess.OrgChartGroupPlan">
+          <ConnectorPoint PointX="1.570315625" PointY="10.308411458333334" />
+          <ConnectorPoint PointX="1.570315625" PointY="20.779205729166669" />
+          <ConnectorPoint PointX="2.875" PointY="20.779205729166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.EmployeeGroupPlan">
+          <ConnectorPoint PointX="7.203125" PointY="7.8201302083333326" />
+          <ConnectorPoint PointX="7.203125" PointY="20.947825520833334" />
+          <ConnectorPoint PointX="4.375" PointY="20.947825520833334" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LongHu.DataAccess.GroupPlanCollection" Width="2.25" PointX="8.25" PointY="24.75" Height="5.8377083333333353" />
+        <AssociationConnector Association="LongHu.DataAccess.GroupPlanGroupPlanCollection">
+          <ConnectorPoint PointX="4.375" PointY="22.407135416666669" />
+          <ConnectorPoint PointX="8.25" PointY="22.407135416666669" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.ContractGroupPlanCollection">
+          <ConnectorPoint PointX="15.113284375" PointY="14.677552083333334" />
+          <ConnectorPoint PointX="15.113284375" PointY="25.131093749999998" />
+          <ConnectorPoint PointX="10.5" PointY="25.131093749999998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LongHu.DataAccess.GroupPlanDetail" Width="1.5" PointX="12.125" PointY="21.375" Height="1.9594531250000031" />
+        <AssociationConnector Association="LongHu.DataAccess.GroupPlanCollectionGroupPlanDetail">
+          <ConnectorPoint PointX="10.5" PointY="22.773346354166669" />
+          <ConnectorPoint PointX="12.125" PointY="22.773346354166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="LongHu.DataAccess.DistrictPlanCollectionGroupPlanDetail">
+          <ConnectorPoint PointX="10.5" PointY="18.158875833333333" />
+          <ConnectorPoint PointX="13.40625" PointY="18.158875833333333" />
+          <ConnectorPoint PointX="13.40625" PointY="21.375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LongHu.DataAccess.DistrictProjectRelation" Width="2.25" PointX="5.875" PointY="17.625" IsExpanded="true" />
+        <AssociationConnector Association="LongHu.DataAccess.ProjectPlanCollectionDistrictProjectRelation" />
+        <EntityTypeShape EntityType="LongHu.DataAccess.GroupDistrictRelation" Width="2.625" PointX="5.25" PointY="21.75" />
+        <AssociationConnector Association="LongHu.DataAccess.GroupPlanGroupDistrictRelation" />
+        <AssociationConnector Association="LongHu.DataAccess.DistrictPlanCollectionGroupDistrictRelation" />
+        <AssociationConnector Association="LongHu.DataAccess.DistricPlanDistrictProjectRelation" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

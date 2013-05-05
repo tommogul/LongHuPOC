@@ -1,0 +1,162 @@
+﻿@using ModelResources = LongHu.Framework.Resources.OrgChartResources
+@using GlobalResources = Resources.Global
+@model LongHu.ObjectModel.OrgChart
+@{
+    if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Edit)
+    {
+        ViewBag.Title = ModelResources.EditPageTitle;
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Create)
+    {
+        ViewBag.Title = ModelResources.CreatePageTitle;
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Details)
+    {
+        ViewBag.Title = ModelResources.DetailsPageTitle;
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+    {
+        ViewBag.Title = ModelResources.DeletePageTitle;
+    }
+
+}
+
+<h2>@ViewBag.Title</h2>
+@if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+    {
+        <h3>@ModelResources.DeleteConfirmMessage</h3>
+    }
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(ModelResources.CreateValidationSummaryMessage, true)
+    <fieldset>
+      
+        <ol>
+
+		@if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Edit
+            || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+        {
+            @Html.HiddenFor(model => model.Id)
+        }
+
+            @Html.HiddenFor(model => model.Id)
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.Name, ModelResources.LabelName)
+        </div>
+        <div class="valueLabel">
+                  @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.Name)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.Name)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ParentId, ModelResources.LabelParentId)
+        </div>
+        <div class="valueLabel">
+                  @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.ParentId)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.ParentId)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.ParentId)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.Path, ModelResources.LabelPath)
+        </div>
+        <div class="valueLabel">
+                  @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.Path)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.Path)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.Path)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.CreatedOn, ModelResources.LabelCreatedOn)
+        </div>
+        <div class="valueLabel">
+                  @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.CreatedOn)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.CreatedOn)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.CreatedOn)
+        </div>
+        </li>
+    <li>
+        <div class="label">
+            @Html.LabelFor(model => model.ModifiedOn, ModelResources.LabelModifiedOn)
+        </div>
+        <div class="valueLabel">
+                  @if (Model.ActionOperationType ==LongHu.ObjectModel.EActionOperationType.Details
+                     || Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+                     {
+					    @Html.DisplayFor(model => model.ModifiedOn)
+
+				     }
+					 else
+					 {
+						    @Html.TextBoxFor(model => model.ModifiedOn)
+					 }
+                  
+           @Html.ValidationMessageFor(model => model.ModifiedOn)
+        </div>
+        </li>
+
+  </ol>
+    </fieldset>
+    <fieldset class="submit">
+           @if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Edit)
+    {
+        <input type="submit" value="@GlobalResources.EditAction" name="Edit" />
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Create)
+    {
+        <input type="submit" value="@GlobalResources.CreateAction" name="Create" />
+    }
+    else if (Model.ActionOperationType == LongHu.ObjectModel.EActionOperationType.Delete)
+    {
+        <input type="submit" value="@GlobalResources.DeleteAction" name="Delete" />
+    }
+    </fieldset>
+}
+<p>
+
+    @Html.ActionLink(GlobalResources.BackToListAction, "Index")
+</p>
+
+

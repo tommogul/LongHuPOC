@@ -1,0 +1,79 @@
+﻿/*============================= Dialog ActiveX start ====================================================*/
+
+.com_widget {font-family: Lucida Grande, Lucida Sans, Arial, sans-serif; font-size: 1.1em; }
+.com_widget input, .com_widget select, .com_widget textarea, .com_widget button { font-family: Lucida Grande, Lucida Sans, Arial, sans-serif; font-size: 1em; }
+.com_widget-content {border:1px solid #a6c9e2; background:#fcfdfd; color: #222222; }
+.com_widget-content a {color: #222222; }
+.com_corner-all { -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+.com_widget-header { border: 1px solid #4297d7; background: #5c9ccc url(../pic/com_bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x; color: #ffffff; font-weight: bold; }
+.com_widget-header a { color: #ffffff; }
+.com_helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.com_helper-clearfix { display: inline-block; }
+* html .com_helper-clearfix { height:1%; }
+.com_helper-clearfix { display:block; }
+.com_icon {width:16px;height: 16px;display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat;}
+.com_dialog { position: relative; padding: .2em; width: 300px;}
+.com_dialog .com_dialog-titlebar { padding:0 0 0 1em; position: relative;  }
+.com_dialog .com_dialog-title { float: left; margin: .2em 0 .2em; *margin: .1em 0 .2em;} 
+.com_dialog .com_dialog-content {border:0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.com_draggable .com_dialog-titlebar { cursor: move; }
+.com_dialog .com_dialog-titlebar-close {position:absolute; right: .3em; top:50%; width:19px; margin:-10px 0 0 0; padding: 1px; height:18px; cursor:pointer;}
+.com_dialog .com_dialog-titlebar-close span {display: block; margin: 1px; }
+.com_dialog .com_dialog-titlebar-close{background:url(pic/Dialog_b.gif) 6px -35px no-repeat;}
+.com_dialog .com_dialog-titlebar-close:hover, .com_dialog .com_dialog-titlebar-close:focus {font-weight: bold; color: #1d5987; outline: none; background: url(pic/Dialog_b.gif) no-repeat 6px 6px #d0e5f5; }
+
+/*============================= Dialog ActiveX end ====================================================*/
+
+
+/*============================= Date ActiveX start====================================================*/
+.com_cbox{position:relative;border:#aaaaaa solid 1px; padding:1px; background:#FFF; width:300px; min-height:155px;}
+.com_cbox .mf_lr_d,.com_cbox .mf_lr_a,.com_cbox .mf_rr_a,.com_cbox .mf_rr_d{border: none;margin:0 2px;width:10px;height:10px;background: transparent url(pic/com_bg.png) no-repeat;vertical-align: middle;cursor:pointer;}
+.com_cbox .mf_rr_d{background-position: 0 -26px;}
+.com_cbox .mf_lr_a{background-position: 0 -13px;}
+.com_cbox .mf_lr_d{background-position: 0 -39px;}
+.com_cbox a.ac_close_t{float: right;margin:2px 0 0;text-indent: -9999em;display: block;width:11px;font:1px/1px arial;height:11px;background: url(pic/com_bg.png) no-repeat 0 -99px;overflow:hidden; }
+.com_cbox a.ac_close_t:hover{background-position: 0 -116px;}
+.com_cbox .c_green {color:#1c95c4;}
+.com_cbox .calendar_year a:link{text-decoration:none; width:12px; height:12px; display:block; font-size:30px;}
+.com_cbox .calendar_year a:visited{text-decoration:none;width:12px; height:12px; display:block;font-size:30px;}
+.com_cbox .calendar_year a:hover{text-decoration: none;width:12px; height:12px; display:block;font-size:30px;}
+.com_cbox .calendar_year a.cu_n:link{text-decoration:none; cursor:default;width:12px; height:12px; display:block;}
+.com_cbox .calendar_year a.cu_n:visited{text-decoration:none;cursor:default;cursor:default;width:12px; height:12px; display:block;}
+.com_cbox .calendar_year a.cu_n:hover{text-decoration: none;cursor:default;cursor:default;width:12px; height:12px; display:block;}
+.com_cbox .calendar_year {background:#e8eff5;width:300px;font-weight:bold;height:22px;font-size:12px;position:relative;line-height:22px; z-index:100;}
+.com_cbox .calendar_year .h{margin-left:47px;_margin-left:24px; display:block; float:left; font-family:Arial;}
+.com_cbox .calendar_year .m{margin-right:55px;display:block; text-align:right; float:right;_float:none; font-family:Arial;}
+.com_cbox .calendar_year .year {left:28px;position:absolute;top:6px;_height:12px;_overflow:hidden;}
+.com_cbox .calendar_year .month {position:absolute;top:3px;right:6px;}
+.com_cbox .calendar_year .month_1 {position:absolute;right:36px;top:6px;height:10px;overflow:hidden;}
+.com_cbox .date_box table {font-size:12px; font-family:Arial; float:left; margin-top:10px;}
+.com_cbox .date_box .family{font-family:宋体;}
+.com_cbox .date_box .hr{width:1px; height:120px; line-height:0; font-size:1px; border-left:#aaaaaa solid 1px; float:left; margin:8px 8px 0 8px;}
+.com_cbox .date_box td{text-align:center;vertical-align:middle;width:14%;cursor:pointer;font-weight:bold;}
+.com_cbox .date_box th {text-align:center;vertical-align:middle;width:14%;color:#777777; font-weight:bold}
+.com_cbox .date_box .Close{font-weight:normal; color:#777777; cursor:auto;}
+.com_cbox .date_box td.hover {background:#1c95c4 none repeat scroll 0 0;font-weight:bold;color:#FFFFFF;}
+.com_cbox .date_box td.newdate{color:#BB0000; font-weight:bold;}
+.com_cbox .date_box td.selected{background:#777777; none repeat scroll 0 0;font-weight:bold;color:#FFFFFF;}
+
+		/*=========== 年月日选择===========*/
+		.com_select_YM{width:180px;}
+		.com_select_YM .calendar_year{width:158px;padding-left:22px;}
+		.com_select_YM .calendar_year .year{left:3px;}
+		.com_select_YM .calendar_year .month_1{right:20px;}
+		.com_select_YM .date_box table{width:180px;}
+
+/*============================= Date ActiveX end====================================================*/
+
+
+/*============================= Bug ActiveX start====================================================*/
+
+.com_bug{border:#cccccc solid 1px; background:#f1f5f8; white-space:nowrap;}
+.com_bug .w{position:relative;padding:10px;color:#ba0100;}
+
+/*============================= Bug ActiveX end====================================================*/
+
+/*============================= Close ActiveX ====================================================*/
+a.com_close{text-indent: -9999em;display: block;width:11px;font:1px/1px arial;height:11px;background: url(pic/com_bg.png) no-repeat 0 -99px; }
+a.com_close:hover{background-position: 0 -116px;}
+/*============================= Close ActiveX end====================================================*/

@@ -1,0 +1,83 @@
+﻿<Vulns tag="forms">
+  <PreReq>
+    <PreqTag>trace</PreqTag>
+    <PreqProperty>enabled</PreqProperty>
+    <PreqValue>true</PreqValue>
+  </PreReq>
+  <Vulnerability>
+    <Tag>trace</Tag>
+    <Property>localOnly</Property>
+    <Value>false</Value>
+    <DefaultValue>true</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>Trace is enabled</Title>
+    <Description>
+      <![CDATA[
+   
+   <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style1
+            {
+                font-family: Arial;
+            }
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style3
+            {
+                font-family: Arial;
+                font-size: x-small;
+            }
+            .style4
+            {
+                font-size: small;
+                font-family: "Times New Roman", Times, serif;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            ASP.NET &#39;s trace feature is a powerful mechanism that helps developers to debug 
+            and resolve problems at applications. But it is also can be used for malicious 
+            attackers to gain all information about requests and responses to the 
+            application. For this application, traces can be seen from extranets. An attacker can see whole requests among clients and
+            application from trace.axd file.
+           
+            From the trace logs, the attacker can gain session cookies, session state, QueryString and post variables, execution time, etc.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style3">&lt;configuration&gt; </span>
+            <br class="style3" />
+            <span class="style3">&nbsp; &lt;system.web&gt; </span>
+            <br class="style3" />
+            <span class="style1"><span class="style2">&nbsp;&nbsp;&nbsp; &lt;trace enabled=&quot;</span><strong><span 
+                class="style2">false</span></strong><span class="style2">&quot; localOnly=&quot;</span><strong><span 
+                class="style2">true</span></strong><span class="style2">&quot;&gt; </span></span>
+    </p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+        <li class="style2">http://www.developerfusion.com/article/6678/top-10-application-security-vulnerabilities-in-webconfig-files-part-one/3/</li>
+        <li class="style2">http://msdn.microsoft.com/en-us/library/6915t83k.aspx</li>
+    </ul></p>
+    <p>
+        &nbsp;</p>
+	
+	</body>
+</html>
+	
+]]>
+    </Description>
+  </Vulnerability>
+</Vulns>

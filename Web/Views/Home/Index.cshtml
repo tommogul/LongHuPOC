@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Default";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Home</h2>
+<h3>
+    Welcome to ARISE!
+</h3>
+<p>
+    To learn more about ARISE visit <a href="http://arise.pfizer.com" title="ASP.NET Website">
+        arise.pfizer.com</a>.
+</p>
+<div>
+    <div class="sanjiao">
+        <span>学校类别</span><a class="xiala"><img src="sanjiao.jpg" /></a></div>
+    <div class="yin">
+        <ul>
+            <li>类别1</li>
+            <li>类别2</li>
+            <li>类别3</li>
+        </ul>
+    </div>
+</div>
+@section js{
+    <script language="javascript" type="text/javascript">
+
+        $(document).ready(function () {
+            alert(1);
+        });
+        $(document).ready(function () {
+            alert(1);
+            $(".sanjiao").click(function () {
+                $(".yin").toggle();
+            });
+            $(".xiala").click(function () {
+                $(".yin").toggle();
+            });
+            $(".yin li").each(function () {
+
+                $(this).click(function () {
+                    var yin_text = $(this).text();
+                    $(".sanjiao span").text(yin_text);
+                    $(".yin").css("display", "none");
+                });
+            })
+        })
+    </script>
+}

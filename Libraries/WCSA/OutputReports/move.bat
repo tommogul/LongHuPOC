@@ -1,0 +1,1 @@
+FOR /F %%I IN ('DIR *.html /B /O:-D') DO COPY %%I %1\WCSA.html & XCOPY Reporting %1\Reporting /I /Y & EXIT /B

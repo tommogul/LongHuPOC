@@ -1,0 +1,13 @@
+﻿@model Boolean?
+@if (Model.HasValue)
+{
+    @Html.RadioButton("", true, Model.Value, new { disabled = "disabled" }) @Html.Label("Yes")       
+    @Html.RadioButton("", false, !Model.Value, new { disabled = "disabled" })  @Html.Label("No")   
+    @Html.RadioButton("", "", false, new { disabled = "disabled" }) @Html.Label("Unknown")    
+}
+else
+{ 
+    @Html.RadioButton("", true, false, new { disabled = "disabled" }) @Html.Label("Yes")       
+    @Html.RadioButton("", false, false, new { disabled = "disabled" })  @Html.Label("No")   
+    @Html.RadioButton("", "", true, new { disabled = "disabled" }) @Html.Label("Unknown")    
+}

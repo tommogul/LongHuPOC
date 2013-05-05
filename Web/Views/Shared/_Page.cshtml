@@ -1,0 +1,38 @@
+﻿@model IPagedList
+@using GlobalResources = Resources.Global
+@{
+    // Action
+    var action = Html.ViewContext.RouteData.Values["action"].ToString();
+    // Controller
+    var controller = Html.ViewContext.RouteData.Values["controller"].ToString();
+}
+<div id="pager" class="pager">
+    @{
+        ViewData["TotalPageCount"] = @Model.TotalItemCount;
+    }
+    @if (Model.TotalPageCount <= 0 || Model.PageIndex <= 0)
+    {
+        <span class="disabled">@(GlobalResources.PagerFirst)</span>
+        <span class="disabled">@(GlobalResources.PagerPrev)</span>
+    }
+    else
+    {
+        <a href="#" data="0" class="enabled">@(GlobalResources.PagerFirst)</a>
+        <a href="#" data="@(Model.PageIndex - 1)" class="enabled">@(GlobalResources.PagerPrev)</a>
+    }
+    @if (Model.TotalPageCount <= 0 || Model.PageIndex + 1 >= Model.TotalPageCount)
+    {
+        <span class="disabled">@(GlobalResources.PagerNext)</span>
+        <span class="disabled">@(GlobalResources.PagerLast)</span>
+    }
+    else
+    {
+        <a href="#" data="@(Model.PageIndex + 1)" class="enabled">@(GlobalResources.PagerNext)</a>
+        <a href="#" data="@(Model.TotalPageCount - 1)" class="enabled">@(GlobalResources.PagerLast)</a>
+    }
+    <span class="text">@(GlobalResources.PagerNumber)</span>
+    @Html.TextBox("Goto", Model.PageIndex + 1, new { @class = "num" })
+    <span class="text">@(GlobalResources.PagerTotalPage)</span> <span class="text"><strong>@Model.TotalPageCount</strong></span>
+    <span class="text">@(GlobalResources.PagerTotalRecords)</span> <span class="text"><strong>@Model.TotalItemCount</strong></span>
+</div>
+<input type="hidden" id="hidPagerCondition" value="@Model.FormCondition" />

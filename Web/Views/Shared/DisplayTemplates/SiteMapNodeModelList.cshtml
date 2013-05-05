@@ -1,0 +1,12 @@
+﻿@model SiteMapNodeModelList
+@using System.Web.Mvc.Html
+
+<ul class="level2 dynamic uldiv2 ">
+    @foreach (var node in Model) { 
+        <li class="dynamic liul1">@Html.DisplayFor(m => node) 
+            @if (node.Children.Any()) {
+                @Html.DisplayFor(m => node.Children)
+            }
+        </li>
+    }
+</ul>

@@ -1,0 +1,352 @@
+﻿
+body {
+    background: url("../Images/BodyBackground.png") repeat-y scroll center center #E2E2E2;
+    color: #696969;
+    font-family: Arial,Helvetica,Verdana,sans-serif;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+}
+a:link, a:visited {
+    color: #3873A9;
+}
+a:hover {
+    color: #58A6FB;
+    text-decoration: none;
+}
+a:active {
+    color: #034AF3;
+}
+p {
+    margin-bottom: 10px;
+}
+.main {
+    line-height: 1.6em;
+}
+h1, h2, h3, h4 {
+    line-height: normal;
+    text-transform: none;
+}
+h1 {
+    font-family: Calibri,Arial,Helvetica,Verdana,sans-serif;
+    font-size: 2.2em;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+h1, h1 a, h1 a:visited {
+    color: #0093D1;
+    text-decoration: none;
+}
+h1 a:hover {
+    color: #3873A9;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+h3 {
+    color: #0093D1;
+    font-size: 1.5em;
+    font-weight: 200;
+}
+h4 {
+    color: #056993;
+    font-size: 1em;
+    font-weight: bold;
+}
+.page {
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    width: 960px;
+}
+.header {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.header h1 {
+    background-image: url("../Images/PfizerLogo.png");
+    background-repeat: no-repeat;
+    float: left;
+    margin: 23px 0 23px 23px;
+    padding: 0 0 0 65px;
+}
+.main {
+    margin: 20px;
+}
+.subMenu {
+    display: block;
+    font-size: 11px;
+    padding: 10px;
+    text-align: right;
+}
+.subMenu a {
+    margin: 0 7px;
+}
+div.navBar {
+    background-color: #2982C6;
+    background-image: url("../Images/NavBackground.png");
+}
+div.navBar img {
+    display: none;
+    visibility: hidden;
+}
+div.menu ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+div.menu ul li a:hover {
+    color: White;
+}
+a.popout {
+    background-image: url("../Images/MenuArrow.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+a.static, a.static:link, a.static:visited, a.dynamic, a.dynamic:link, a.dynamic:visited {
+    color: #EBEBEB;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 7px 35px 7px 15px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.static .highlighted {
+    background-color: #48A2E1;
+}
+.dynamic, .highlighted {
+    background-color: #3498DE;
+}
+.dynamic {
+    color: White;
+    opacity: 0.9;
+}
+fieldset {
+    background-color: #E3EDF8;
+    border: medium none;
+    margin: 0;
+    padding: 10px;
+}
+fieldset ol {
+    float: left;
+    list-style: none outside none;
+    margin: 0 17px 0 0;
+    padding: 0;
+}
+fieldset li {
+    clear: left;
+    float: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+fieldset label {
+    color: #3873A9;
+    float: left;
+    margin-right: 12px;
+    text-align: right;
+    width: 128px;
+}
+fieldset .valueLabel {
+    color: #696969;
+    float: left;
+    margin-right: 0;
+    text-align: left;
+    width: 256px;
+    word-wrap: break-word;
+}
+fieldset .valueLabel a {
+    color: #696969;
+}
+fieldset label.inline {
+    display: inline;
+}
+select.dropDownList, input.textBox, textarea.textBox, textarea.textarea {
+    border: 1px solid #CCCCCC;
+    color: #696969;
+    float: left;
+}
+input.textBox, textarea.textBox, textarea.textarea {
+    width: 280px;
+}
+select.dropDownList {
+    width: 282px;
+}
+input.textBox.mandatory, textarea.textBox.mandatory, select.dropDownList.mandatory, textarea.textarea.mandatory {
+    border-left: 2px solid Red;
+}
+textarea.textarea {
+    height: 60px;
+}
+div.multiSelect {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    height: 127px;
+    overflow: auto;
+    width: 281px;
+}
+input.dateField {
+    width: 67px;
+}
+.datePickerCalendar {
+    float: left;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    vertical-align: middle;
+}
+.radioButton, .radioButtonList, .radioButton input, .radioButtonList input, .radioButtonList label {
+    float: left;
+}
+.radioButton label, .radioButtonList label {
+    color: #696969;
+    width: auto;
+}
+.checkBox input {
+    float: left;
+}
+.checkBoxList {
+    background-color: white;
+    border: 1px solid #DCDCDC;
+    height: 110px;
+    overflow: auto;
+    width: 280px;
+}
+.checkBoxList li {
+    margin-bottom: 0;
+}
+.checkBoxList input {
+    float: left;
+}
+.checkBoxList label {
+    text-align: left;
+    width: auto;
+}
+div.accountInfo {
+    width: 42%;
+}
+fieldset.submit {
+    padding-bottom: 10px;
+    text-align: center;
+}
+input.submit, fieldset.submit input {
+    background-color: #A3CF68;
+    background-image: url("../Images/SubmitButtonBackground.png");
+    background-repeat: repeat-x;
+    border: 1px solid #74A631;
+    color: White;
+}
+.submit .cancel {
+    background-color: #E26E76;
+    background-image: url("../Images/CancelButtonBackground.png");
+    border: 1px solid #AF1515;
+}
+.validationSummary {
+    color: Red;
+}
+.autoCompleteList {
+    border: 1px solid buttonshadow;
+    cursor: default;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    z-index: 100002 !important;
+}
+.autoCompleteList li {
+    line-height: normal;
+    margin-bottom: 0;
+}
+.validation-summary-valid {
+    display: none;
+}
+.validation-summary-errors {
+    color: Red;
+}
+.validation-summary-errors span {
+    font-weight: bold;
+}
+.field-validation-error {
+    color: Red;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.grid {
+    width: 100%;
+}
+/*
+.grid .header, .grid .header th {
+    background-image: url("../Images/HeaderBackground.png");
+    background-repeat: repeat-x;
+    color: #3873A9;
+    font-weight: normal;
+}
+*/
+.grid .header th, .grid .header th {
+    height: 25px;
+}
+.grid .row, .grid .row td {
+    border-bottom: 1px solid #E2E2E2;
+}
+.grid .header th, .grid .row td {
+    padding: 2px;
+}
+.grid .command {
+    text-align: right;
+}
+.grid .pager table {
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid .pager td, .pager {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+.clear {
+    clear: both;
+}
+.submitButton {
+    padding-right: 10px;
+    text-align: right;
+}
+.warning, a.warning {
+    color: Red;
+}
+.success, a.success {
+    color: #74A631;
+}
+.warning, .success {
+    font-weight: bold;
+}
+.modalPopup {
+    background-color: White;
+    padding: 10px;
+    width: 462px;
+}
+.modalPopup h2 {
+    cursor: move;
+    margin-top: 0;
+}
+.modalBackground {
+    background-color: Gray;
+    opacity: 0.7;
+}
+.loading {
+    background-color: White;
+    background-image: url("../Images/Loading.gif");
+    background-position: 20px 50px;
+    background-repeat: no-repeat;
+    border: 5px solid #E3EDF8;
+    height: 50px;
+    left: 50%;
+    margin-left: -120px;
+    margin-top: -120px;
+    opacity: 0.9;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 220px;
+    z-index: 100002;
+}

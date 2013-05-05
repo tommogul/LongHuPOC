@@ -1,0 +1,55 @@
+﻿.ProjectMain
+{
+    font-size: small;
+    font-weight: bold;
+    text-align: right;
+    margin-left: 100px;
+}
+.ProjectDetailHeader
+{
+    font-size: small;
+    font-weight: bold;
+    color: White;
+    background-color: rgb(58,58,58);
+    text-align: center;
+    vertical-align: middle;
+    border-style: solid;
+}
+.ProjectDetailTable
+{
+    white-space: nowrap;
+    margin-left: 10px;
+    border-style:dotted;
+}
+.ProjectSearchTitle
+{
+    font-size: small;
+    font-weight: bold;
+    text-align: right;
+    margin-left: 100px;
+    width:800px;
+}
+.FillterButton
+{
+    font-size: small;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    height: 25px;
+}
+.ProjectTitleMap
+{
+    background-color: rgb(11,150,242);
+    color: White;
+}
+.row
+{
+    height: 20px;    
+}
+.row td
+{
+    border-left-style: none;
+    border-top-style: none;
+    border-style:dotted;
+}

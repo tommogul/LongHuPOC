@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Vulns tag="roleManager">
+  <PreReq>
+    <PreqTag>roleManager</PreqTag>
+    <PreqProperty>enabled</PreqProperty>
+    <PreqValue>true</PreqValue>
+  </PreReq>
+
+  <Vulnerability>
+    <Tag>roleManager</Tag>
+    <Property>cookieRequireSSL</Property>
+    <Value>false</Value>
+    <DefaultValue>false</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>roleManager cookies doesn't Require SSL</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your configuration allows RoleManager cookies to be transferred in clear-text 
+            form. An attacker that can be able to monitor your network, can easily steal 
+            your session.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;roleManager enabled=&quot;true&quot; cookieRequireSSL=&quot;<b>true</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">http://msdn.microsoft.com/en-us/library/ms164660.aspx</li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+
+  <Vulnerability>
+    <Tag>roleManager</Tag>
+    <Property>cookieSlidingExpiration</Property>
+    <Value>true</Value>
+    <DefaultValue>true</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>roleManager Cookie Sliding Expiration Used</Title>
+    <Description>
+      <![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Sliding Expiration disables timeouts for RoleManager sessions. If it is set to 
+            false, after the timeout interval, user must re-login to application with 
+            credentials. If it is set to true, then if an attacker steals cookie can use it 
+            for gainin access to the application with the cookie&#39;s owner&#39;s permissions.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;roleManager 
+            enabled=&quot;true&quot; cookieSlidingExpiration=&quot;true&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">http://msdn.microsoft.com/en-us/library/ms164660.aspx</li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+
+  <Vulnerability>
+    <Tag>roleManager</Tag>
+    <Property>cookieProtection</Property>
+    <Value>None</Value>
+    <DefaultValue>All</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>roleManager cookies are not both encrypted - validated</Title>
+    <Description>
+      <![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your configuration allows transportation of your RoleManager cookies both of not-encrypted 
+            and not-validated. This can lead an attacker to perform session hijacking, 
+            eavesdropping, session/cookie tampering and related issues.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;roleManager 
+            enabled=&quot;true&quot; cookieProtection=&quot;<b>All</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">http://msdn.microsoft.com/en-us/library/ms164660.aspx</li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+
+  <Vulnerability>
+    <Tag>roleManager</Tag>
+    <Property>cookieProtection</Property>
+    <Value>Encryption</Value>
+    <DefaultValue>All</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>roleManager cookie are not validated</Title>
+    <Description>
+      <![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your configuration makes your cookies transported in an encrypted form but 
+            doesn&#39;t validate them. This can lead an attacker to tamper session/cookie.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;roleManager 
+            enabled=&quot;true&quot; cookieProtection=&quot;<b>All</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">http://msdn.microsoft.com/en-us/library/ms164660.aspx</li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+
+  <Vulnerability>
+    <Tag>roleManager</Tag>
+    <Property>cookieProtection</Property>
+    <Value>Validation</Value>
+    <DefaultValue>All</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>roleManager cookie are not encrypted</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your configuration makes your cookies transported in validated for manipulation 
+            attacks but not encrypted. This can lead an attacker to monitor and steal your 
+            session and cookies.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;roleManager 
+            enabled=&quot;true&quot; cookieProtection=&quot;<b>All</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">http://msdn.microsoft.com/en-us/library/ms164660.aspx</li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+
+  <Vulnerability>
+    <Tag>roleManager</Tag>
+    <Property>cookiePath</Property>
+    <Value>/</Value>
+    <DefaultValue>/</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>roleManager cookie path is Liberal</Title>
+    <Description>
+      <![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your application&#39;s RoleManager cookie path is defined liberal. It means that cookie will be 
+            valid and related whole domain. Restrict the cookie to the spesific directories 
+            on application to reduce risk about cookie related issues.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;roleManager 
+            enabled=&quot;true&quot; cookiePath=&quot;<b>{abcd}</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">http://msdn.microsoft.com/en-us/library/ms164660.aspx</li>
+            <li class="style2">http://my.opera.com/yngve/blog/show.dml/388840 </li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+
+</Vulns>

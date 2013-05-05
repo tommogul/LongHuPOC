@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Vulns tag="httpRuntime">
+  <!--
+  <PreReq>
+
+  </PreReq>
+  <Vulnerability>
+    <Tag>httpRuntime</Tag>
+    <Property>maxRequestLength</Property>
+    <Value></Value>
+    <DefaultValue>4096</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>Maximum Request Length is not set</Title>
+  </Vulnerability>
+  -->
+
+
+</Vulns>

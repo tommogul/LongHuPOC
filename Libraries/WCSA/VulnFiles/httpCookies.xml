@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Vulns tag="httpCookies">
+  <PreReq>
+    
+  </PreReq>
+  <Vulnerability>
+    <Tag>httpCookies</Tag>
+    <Property>httpOnlyCookies</Property>
+    <Value>false</Value>
+    <DefaultValue>false</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>Web cookies are not HttpOnly</Title>
+    <Description>
+      <![CDATA[  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your configuration allows cookies to be be accessed from client-side scripting 
+            technologies. This can lead an attacker to perform Cross-Site Scripting and 
+            session hijacking &amp; stealing attacks.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;httpCookies 
+            httpOnlyCookies=&quot;<b>true</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">http://msdn.microsoft.com/en-us/library/ms228262.aspx</li>
+            <li class="style2">http://www.owasp.org/index.php/HTTPOnly</li>
+            <li class="style2">
+                http://www.developerfusion.com/article/6678/top-10-application-security-vulnerabilities-in-webconfig-files-part-one/5/</li>
+    </ul>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+
+  <Vulnerability>
+    <Tag>httpCookies</Tag>
+    <Property>requireSSL</Property>
+    <Value>false</Value>
+    <DefaultValue>false</DefaultValue>
+    <Operator>Equal</Operator>
+    <Title>Web cookies doesn't require SSL</Title>
+    <Description>
+      <![CDATA[ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title></title>
+	    <style type="text/css">
+            .style2
+            {
+                font-size: x-small;
+            }
+            .style5
+            {
+                font-size: small;
+            }
+            .style6
+            {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: x-small;
+            }
+        </style>
+	</head>
+	<body>
+	
+	    <p>
+            Your configuration allows web cookies to be transferred in clear-text 
+            form. An attacker that can be able to monitor your network, can easily steal 
+            your session.</p>
+        <h3 class="style5">
+            Secure Configuration
+        </h3>
+        <p>
+            <span class="style6">&lt;configuration&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp; &lt;system.web&gt;</span><br class="style6" />
+            <span class="style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;httpCookies 
+            requireSSL=&quot;<b>true</b>&quot;&gt;</span></p>
+    <h3>
+        <span class="style5">References</span></h3>
+        <ul>
+            <li class="style2">
+                http://msdn.microsoft.com/en-us/library/ms228262.aspx</li>
+            <li class="style2">
+                http://www.hamishgraham.net/post/Enabling-HttpOnly-RequireSSL-on-Cookies.aspx</li>
+    </ul>
+	
+	<p>
+        &nbsp;</p>
+	
+	</body>
+</html>]]>
+    </Description>
+  </Vulnerability>
+  
+</Vulns>

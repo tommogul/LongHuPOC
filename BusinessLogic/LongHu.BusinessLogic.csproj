@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94E549A0-DC6A-4153-BE3E-E8390A20FEE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LongHu.BusinessLogic</RootNamespace>
+    <AssemblyName>LongHu.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\Libraries\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="My.FrameWork.Utilities">
+      <HintPath>..\Libraries\My.FrameWork.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\TransactionDelegate .cs" />
+    <Compile Include="ContractService.cs" />
+    <Compile Include="DataDictionaryService.cs" />
+    <Compile Include="DepartmentService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="OrgChartService.cs" />
+    <Compile Include="ProjectPlanCollectionService.cs" />
+    <Compile Include="ProjectPlanService.cs" />
+    <Compile Include="ProjectStructureService.cs" />
+    <!--CompileFile-->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\LongHu.DataAccess.csproj">
+      <Project>{E7282121-9191-4F4A-BC74-01CC5AEDF8B3}</Project>
+      <Name>LongHu.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\LongHu.Framework.csproj">
+      <Project>{7A95D109-1A6F-4172-9F50-C6B6B55DF9CB}</Project>
+      <Name>LongHu.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectModel\LongHu.ObjectModel.csproj">
+      <Project>{37F404C0-77C8-4426-9218-02C0F8B6389D}</Project>
+      <Name>LongHu.ObjectModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,5 @@
+﻿@model DateTime?
+@if (Model.HasValue)
+{
+    @String.Format("{0:d}", Model.GetValueOrDefault().Date.ToString("MMM/dd/yyyy"))
+}
